@@ -7,13 +7,19 @@
 
 import UIKit
 
-class NumberVC: UIViewController {
+class ReuseViewController: UIViewController {
 
-    @IBOutlet weak var mainCLV: UICollectionView!
+    @IBAction func backButton() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBOutlet weak var reuseCLV: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainCLV.backgroundColor = UIColor.clear
-        mainCLV.register(UINib(nibName: mainCLVCell.className, bundle: nil), forCellWithReuseIdentifier: mainCLVCell.className)
+        reuseCLV.backgroundColor = UIColor.clear
+        reuseCLV.register(UINib(nibName: reuseCLVCell.className, bundle: nil), forCellWithReuseIdentifier: reuseCLVCell.className)
+        
+        
         
         var cellWidth = 0
         if UIDevice.current.userInterfaceIdiom == .pad {
@@ -26,41 +32,51 @@ class NumberVC: UIViewController {
         flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         flowLayout.scrollDirection = UICollectionView.ScrollDirection.vertical
         flowLayout.minimumInteritemSpacing = 0.0
-        mainCLV.collectionViewLayout = flowLayout
+        reuseCLV.collectionViewLayout = flowLayout
     }
 }
 
-extension NumberVC: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ReuseViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 18
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: mainCLVCell.className, for: indexPath) as! mainCLVCell
-        cell.myView.layer.cornerRadius = 16
-        cell.myView.layer.masksToBounds = true
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseCLVCell.className, for: indexPath) as! reuseCLVCell
+        cell.starImage.image = UIImage(named: "star_empty")
+        cell.reuseView.layer.cornerRadius = 24
+        cell.reuseView.layer.masksToBounds = true
+        
         if indexPath.row == 0 {
-            cell.myImage.image = UIImage(named: "remove_ads.png")
-            cell.myLabel.text = "Remove ads"
+            cell.listLabel.text = "Word list"
+            cell.categoryImage.image = UIImage(named: "package")
         } else if indexPath.row == 1 {
-            cell.myImage.image = UIImage(named: "select_language.png")
-            cell.myLabel.text = "Select language"
+            cell.listLabel.text = "Flash card"
+            cell.categoryImage.image = UIImage(named: "card_black")
         } else if indexPath.row == 2 {
-            cell.myImage.image = UIImage(named: "phrase_book.png")
-            cell.myLabel.text = "Phrase book"
+            cell.listLabel.text = "Take test"
+            cell.categoryImage.image = UIImage(named: "note_black")
         } else if indexPath.row == 3 {
-            cell.myImage.image = UIImage(named: "download_audio.png")
-            cell.myLabel.text = "Download audio"
+            cell.listLabel.text = "Did you know?"
+            cell.categoryImage.image = UIImage(named: "list_black")
         }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if indexPath.row == 0 {
+            
+        } else if indexPath.row == 1 {
+            
+        } else if indexPath.row == 2 {
+            
+        } else if indexPath.row == 3 {
+            
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -72,13 +88,13 @@ extension NumberVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
 }
 
-extension NumberVC: UICollectionViewDelegateFlowLayout {
+extension ReuseViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .zero
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -87,8 +103,8 @@ extension NumberVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if UIDevice.current.userInterfaceIdiom == .pad{
-            return CGSize(width: UIScreen.main.bounds.width / 2 - 20, height: 220)
+            return CGSize(width: UIScreen.main.bounds.width - 40, height: 48)
         }
-        return CGSize(width: (UIScreen.main.bounds.width - 50) / 2 - 10, height: 150)
+        return CGSize(width: UIScreen.main.bounds.width - 40, height: 48)
     }
 }

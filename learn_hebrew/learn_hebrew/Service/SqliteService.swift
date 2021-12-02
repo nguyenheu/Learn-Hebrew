@@ -8,13 +8,16 @@
 import UIKit
 import SQLite
 class SqliteService:NSObject {
+
     static let shared: SqliteService = SqliteService()
     var DatabaseRoot:Connection?
-    var listDataSelectLang:[selectLangModel] = [selectLangModel]()
-    let users1 = Table("tblLanguage")
+    var listDataLesson:[LessonModel] = [LessonModel]()
+    let users1 = Table("tblLesson")
+    let lessonId = Expression<Int>("lessonId")
+    let lessonNo = Expression<String>("lessonNo")
+    let lessonName = Expression<String>("lessonName")
+    let sortNo = Expression<Int>("sortNo")
     let languageId = Expression<Int>("languageId")
-    let languageName = Expression<String>("languageName")
-    let languageCode = Expression<String>("languageCode")
     
     func loadInit(linkPath:String){
         var dbPath : String = ""
@@ -40,20 +43,22 @@ class SqliteService:NSObject {
         }
     }
     
-    func getDataSelectLang(closure: @escaping (_ response: [selectLangModel]?, _ error: Error?) -> Void) {
+    func getDataLesson(closure: @escaping (_ response: [LessonModel]?, _ error: Error?) -> Void) {
 
-        listDataSelectLang.removeAll()
+        listDataLesson.removeAll()
         if let DatabaseRoot = DatabaseRoot{
             do{
                 for user in try DatabaseRoot.prepare(users1) {
-                    listDataSelectLang.append(selectLangModel(languageId: Int(user[languageId]),
-                                                 languageName: user[languageName],
-                                                 languageCode: user[languageCode]))
+                    listDataLesson.append(LessonModel(lessonId: Int(user[lessonId]),
+                                                      lessonNo: user[lessonNo],
+                                                      lessonName: user[lessonName],
+                                                      sortNo: user[sortNo],
+                                                      languageId: user[languageId]))
                 }
             } catch  {
                 print(error)
             }
         }
-        closure(listDataSelectLang, nil)
+        closure(listDataLesson, nil)
     }
 }

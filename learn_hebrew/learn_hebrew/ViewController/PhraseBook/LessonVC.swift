@@ -10,17 +10,32 @@ import UIKit
 class LessonVC: UIViewController {
 
     var lesson = 0
-    
+    var index = 14
+    var listLessonData:[LessonModel] = [LessonModel]()
+    var listLanguage: [LangMenuModel] = [LangMenuModel]()
     @IBOutlet weak var titleLessonLabel: UILabel!
     @IBOutlet weak var lessonCLV: UICollectionView!
     
     @IBAction func backBtn() {
         dismiss(animated: true, completion: nil)
     }
+    let userDefaults = UserDefaults.standard
+    let SAVE_KEY = "saveKey"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         lessonCLV.backgroundColor = UIColor.clear
         lessonCLV.register(UINib(nibName: lessonCLVCell.className, bundle: nil), forCellWithReuseIdentifier: lessonCLVCell.className)
+        listLanguage = LangMenuData.shared.menu
+        SqliteService.shared.getDataLesson(){ listLessonData, error in
+            if let listLessonData = listLessonData{
+                self.listLessonData = listLessonData
+            }
+        }
+        
+        if let saveSuccessful = userDefaults.integer(forKey: SAVE_KEY) as? Int{
+            index = saveSuccessful
+        }
         
         var cellWidth = 0
         if UIDevice.current.userInterfaceIdiom == .pad {
@@ -112,17 +127,22 @@ extension LessonVC: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: lessonCLVCell.className, for: indexPath) as! lessonCLVCell
         cell.lessonView.layer.cornerRadius = 16
         cell.lessonView.layer.masksToBounds = true
-        cell.lessonView.layer.shadowRadius = 10
-        cell.lessonView.layer.shadowOpacity = 1
-        cell.lessonView.layer.shadowOffset = CGSize(width: 10, height: 3)
-        cell.lessonView.layer.shadowColor = UIColor.black.cgColor
+//        cell.lessonView.layer.shadowRadius = 10
+//        cell.lessonView.layer.shadowOpacity = 1
+//        cell.lessonView.layer.shadowOffset = CGSize(width: 10, height: 3)
+//        cell.lessonView.layer.shadowColor = UIColor.black.cgColor
         cell.lessonImage.image = image
-        
+        if self.listLessonData[indexPath.row].languageId == self.listLanguage[indexPath.row].languageId  {
+            cell.lessonLabel.text = self.listLessonData[indexPath.row*60 + index + lesson*600].lessonName
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-                
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ReuseViewController") as! ReuseViewController
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated:true)
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -140,7 +160,7 @@ extension LessonVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 30
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

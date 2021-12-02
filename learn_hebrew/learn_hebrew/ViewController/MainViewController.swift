@@ -150,7 +150,10 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         } else if indexPath.row == 16 {
             
         } else if indexPath.row == 17 {
-            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "SettingVC") as! SettingVC
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated:true)
         }
         
     }

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="langCLVCell2" customModule="learn_hebrew" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6B3-ji-GkA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uas-ej-apR">
+                                <rect key="frame" x="20" y="11" width="43.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="TRo-od-Kms">
+                                <rect key="frame" x="10" y="42" width="300" height="1"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mg5-43-Tap">
+                                <rect key="frame" x="290" y="16.5" width="10" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="6uO-ib-gm0"/>
+                                    <constraint firstAttribute="width" constant="10" id="fgK-jW-Qau"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uas-ej-apR" firstAttribute="leading" secondItem="6B3-ji-GkA" secondAttribute="leading" constant="20" id="8eg-QW-hgg"/>
+                            <constraint firstAttribute="bottom" secondItem="TRo-od-Kms" secondAttribute="bottom" id="Exz-Rw-vvQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Mg5-43-Tap" secondAttribute="trailing" constant="20" id="NoW-IR-nM4"/>
+                            <constraint firstItem="Mg5-43-Tap" firstAttribute="centerY" secondItem="6B3-ji-GkA" secondAttribute="centerY" id="UW1-Rf-8xq"/>
+                            <constraint firstItem="TRo-od-Kms" firstAttribute="top" secondItem="uas-ej-apR" secondAttribute="bottom" constant="10" id="YrY-gu-GIc"/>
+                            <constraint firstAttribute="trailing" secondItem="TRo-od-Kms" secondAttribute="trailing" constant="10" id="cbV-dK-RPK"/>
+                            <constraint firstItem="uas-ej-apR" firstAttribute="centerY" secondItem="6B3-ji-GkA" secondAttribute="centerY" id="hLV-g9-6Hf"/>
+                            <constraint firstAttribute="bottom" secondItem="TRo-od-Kms" secondAttribute="bottom" id="pwh-Su-z1v"/>
+                            <constraint firstItem="TRo-od-Kms" firstAttribute="leading" secondItem="6B3-ji-GkA" secondAttribute="leading" constant="10" id="znc-mq-ysL"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="6B3-ji-GkA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Duc-qz-Cvc"/>
+                <constraint firstItem="6B3-ji-GkA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="OiN-F7-T7f"/>
+                <constraint firstAttribute="bottom" secondItem="6B3-ji-GkA" secondAttribute="bottom" id="P5J-Tn-Aaz"/>
+                <constraint firstAttribute="trailing" secondItem="6B3-ji-GkA" secondAttribute="trailing" id="r3j-7Q-e2f"/>
+            </constraints>
+            <size key="customSize" width="320" height="43"/>
+            <connections>
+                <outlet property="lineImage" destination="TRo-od-Kms" id="COT-2b-bN9"/>
+                <outlet property="myImage" destination="Mg5-43-Tap" id="uzr-oD-OOT"/>
+                <outlet property="myLabel" destination="uas-ej-apR" id="VnJ-Sg-WxS"/>
+            </connections>
+            <point key="canvasLocation" x="327.536231884058" y="89.397321428571431"/>
+        </collectionViewCell>
+    </objects>
+</document>

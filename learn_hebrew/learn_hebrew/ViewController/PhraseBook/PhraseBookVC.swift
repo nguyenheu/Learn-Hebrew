@@ -9,6 +9,9 @@ import UIKit
 
 class PhraseBookVC: UIViewController {
     var lesson = 0
+    var index = 14
+    var listLessonData:[LessonModel] = [LessonModel]()
+    var listLanguage: [LangMenuModel] = [LangMenuModel]()
     @IBAction func backBtn() {
         dismiss(animated: true, completion: nil)
     }
@@ -59,6 +62,7 @@ extension PhraseBookVC: UITableViewDataSource, UITableViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "LessonVC") as! LessonVC
         vc.lesson = indexPath.row
+        
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated:true)
     }
