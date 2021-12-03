@@ -34,6 +34,9 @@
 		7B92D9E72739888C009AA62B /* SqliteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B92D9E62739888C009AA62B /* SqliteService.swift */; };
 		7BA1083E27392D7400F504F6 /* langCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA1083C27392D7400F504F6 /* langCLVCell.swift */; };
 		7BA1083F27392D7400F504F6 /* langCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BA1083D27392D7400F504F6 /* langCLVCell.xib */; };
+		7BA1531A275A002200C323A8 /* LessonFileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA15319275A002200C323A8 /* LessonFileModel.swift */; };
+		7BA1531D275A0BA500C323A8 /* audioCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA1531B275A0BA500C323A8 /* audioCLVCell.swift */; };
+		7BA1531E275A0BA500C323A8 /* audioCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BA1531C275A0BA500C323A8 /* audioCLVCell.xib */; };
 		7BAEF6CA2754CED4002FF10D /* ReuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAEF6C92754CED4002FF10D /* ReuseViewController.swift */; };
 		7BAEF6CD2754CF46002FF10D /* reuseCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAEF6CB2754CF46002FF10D /* reuseCLVCell.swift */; };
 		7BAEF6CE2754CF46002FF10D /* reuseCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BAEF6CC2754CF46002FF10D /* reuseCLVCell.xib */; };
@@ -78,6 +81,9 @@
 		7B92D9E62739888C009AA62B /* SqliteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqliteService.swift; sourceTree = "<group>"; };
 		7BA1083C27392D7400F504F6 /* langCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = langCLVCell.swift; sourceTree = "<group>"; };
 		7BA1083D27392D7400F504F6 /* langCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = langCLVCell.xib; sourceTree = "<group>"; };
+		7BA15319275A002200C323A8 /* LessonFileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonFileModel.swift; sourceTree = "<group>"; };
+		7BA1531B275A0BA500C323A8 /* audioCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioCLVCell.swift; sourceTree = "<group>"; };
+		7BA1531C275A0BA500C323A8 /* audioCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = audioCLVCell.xib; sourceTree = "<group>"; };
 		7BAEF6C92754CED4002FF10D /* ReuseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseViewController.swift; sourceTree = "<group>"; };
 		7BAEF6CB2754CF46002FF10D /* reuseCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reuseCLVCell.swift; sourceTree = "<group>"; };
 		7BAEF6CC2754CF46002FF10D /* reuseCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = reuseCLVCell.xib; sourceTree = "<group>"; };
@@ -194,6 +200,7 @@
 			children = (
 				7B2181A827359CEC00FEF2D4 /* LessonModel.swift */,
 				7B7EBEF1273D086900B806A6 /* LanguageMenuModel.swift */,
+				7BA15319275A002200C323A8 /* LessonFileModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,6 +220,8 @@
 				7BFF2062274BEE450072A766 /* langCLVCell2.xib */,
 				7BAEF6CB2754CF46002FF10D /* reuseCLVCell.swift */,
 				7BAEF6CC2754CF46002FF10D /* reuseCLVCell.xib */,
+				7BA1531B275A0BA500C323A8 /* audioCLVCell.swift */,
+				7BA1531C275A0BA500C323A8 /* audioCLVCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -250,13 +259,13 @@
 				7B73A96327353FF000709D54 /* Opposite */,
 				7B73A96027353D2300709D54 /* Vocabulary */,
 				7B73A95427353A3800709D54 /* PhraseBook */,
-				7B7B335E27327DDE005E8B75 /* MainViewController.swift */,
 				7B73A95227353A2300709D54 /* SelectLanguageVC.swift */,
 				7B73A95B27353C2F00709D54 /* AlphabetVC.swift */,
 				7B83A4CD27363795008E49E9 /* StudyPlanVC.swift */,
 				7B83A4D0273637FD008E49E9 /* YourScoreVC.swift */,
 				7BE8E2F5274C9A7500965D7F /* SettingVC.swift */,
 				7BAEF6C92754CED4002FF10D /* ReuseViewController.swift */,
+				7B7B335E27327DDE005E8B75 /* MainViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -342,6 +351,7 @@
 				7BBD678727329022002C6AB2 /* mainCLVCell.xib in Resources */,
 				7B7B336227327DDE005E8B75 /* Main.storyboard in Resources */,
 				7B2181A52735997100FEF2D4 /* db.db in Resources */,
+				7BA1531E275A0BA500C323A8 /* audioCLVCell.xib in Resources */,
 				7B2181A3273594E000FEF2D4 /* lessonCLVCell.xib in Resources */,
 				7BFF2064274BEE450072A766 /* langCLVCell2.xib in Resources */,
 				7BAEF6CE2754CF46002FF10D /* reuseCLVCell.xib in Resources */,
@@ -416,7 +426,9 @@
 				7B73A968273540E500709D54 /* GeoQuizVC.swift in Sources */,
 				7BE8E2F6274C9A7500965D7F /* SettingVC.swift in Sources */,
 				7B73A95327353A2300709D54 /* SelectLanguageVC.swift in Sources */,
+				7BA1531A275A002200C323A8 /* LessonFileModel.swift in Sources */,
 				7B73A95C27353C2F00709D54 /* AlphabetVC.swift in Sources */,
+				7BA1531D275A0BA500C323A8 /* audioCLVCell.swift in Sources */,
 				7B73A95627353A5C00709D54 /* PhraseBookVC.swift in Sources */,
 				7BA1083E27392D7400F504F6 /* langCLVCell.swift in Sources */,
 				7B7B335D27327DDE005E8B75 /* SceneDelegate.swift in Sources */,

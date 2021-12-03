@@ -22,27 +22,35 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Jl-jY-A4j">
                                 <rect key="frame" x="0.0" y="0.0" width="180" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="opM-jb-ptU"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzA-xr-dDX">
-                                <rect key="frame" x="25" y="111" width="42.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzA-xr-dDX">
+                                <rect key="frame" x="15" y="106" width="120" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="XLe-Zf-5k9"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star_empty" translatesAutoresizingMaskIntoConstraints="NO" id="Tqd-Io-jx9">
-                                <rect key="frame" x="146" y="146" width="24" height="24"/>
+                                <rect key="frame" x="145" y="146" width="25" height="24"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="nzA-xr-dDX" firstAttribute="leading" secondItem="17V-8y-Upz" secondAttribute="leading" constant="15" id="1qI-X4-jnc"/>
+                            <constraint firstItem="Tqd-Io-jx9" firstAttribute="leading" secondItem="nzA-xr-dDX" secondAttribute="trailing" constant="10" id="2TB-EY-zZ5"/>
                             <constraint firstItem="6Jl-jY-A4j" firstAttribute="leading" secondItem="17V-8y-Upz" secondAttribute="leading" id="6Jf-mb-ivN"/>
                             <constraint firstAttribute="trailing" secondItem="6Jl-jY-A4j" secondAttribute="trailing" id="9Up-7j-PCZ"/>
+                            <constraint firstItem="nzA-xr-dDX" firstAttribute="top" secondItem="6Jl-jY-A4j" secondAttribute="bottom" constant="10" id="9cj-vB-7QC"/>
                             <constraint firstItem="6Jl-jY-A4j" firstAttribute="top" secondItem="17V-8y-Upz" secondAttribute="top" id="ESW-FB-CtP"/>
-                            <constraint firstItem="nzA-xr-dDX" firstAttribute="leading" secondItem="17V-8y-Upz" secondAttribute="leading" constant="25" id="O4x-Xw-0pr"/>
-                            <constraint firstAttribute="bottom" secondItem="nzA-xr-dDX" secondAttribute="bottom" constant="48" id="Qer-P6-Wan"/>
+                            <constraint firstAttribute="bottom" secondItem="nzA-xr-dDX" secondAttribute="bottom" constant="10" id="Rh2-Iu-vNg"/>
                             <constraint firstAttribute="trailing" secondItem="Tqd-Io-jx9" secondAttribute="trailing" constant="10" id="YES-XM-U0Y"/>
                             <constraint firstAttribute="bottom" secondItem="Tqd-Io-jx9" secondAttribute="bottom" constant="10" id="kWB-M8-m0i"/>
-                            <constraint firstItem="nzA-xr-dDX" firstAttribute="top" secondItem="6Jl-jY-A4j" secondAttribute="bottom" constant="15" id="kaC-cN-XWO"/>
                         </constraints>
                     </view>
                 </subviews>

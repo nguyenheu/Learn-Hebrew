@@ -9,11 +9,26 @@ import UIKit
 
 class DownloađAuioVC: UIViewController {
 
-    @IBOutlet weak var mainCLV: UICollectionView!
+    var listLessonDataFile:[LessonFileModel] = [LessonFileModel]()
+    @IBOutlet weak var audioCLV: UICollectionView!
+    
+    @IBAction func backButton() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func downloadAudioButton(_ sender: UIButton) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainCLV.backgroundColor = UIColor.clear
-        mainCLV.register(UINib(nibName: mainCLVCell.className, bundle: nil), forCellWithReuseIdentifier: mainCLVCell.className)
+        audioCLV.backgroundColor = UIColor.clear
+        audioCLV.register(UINib(nibName: langCLVCell2.className, bundle: nil), forCellWithReuseIdentifier: langCLVCell2.className)
+        
+        LessonFileService.shared.getDataLessonFile(){ listLessonDataFile, error in
+            if let listLessonDataFile = listLessonDataFile{
+                self.listLessonDataFile = listLessonDataFile
+            }
+        }
         
         var cellWidth = 0
         if UIDevice.current.userInterfaceIdiom == .pad {
@@ -26,7 +41,7 @@ class DownloađAuioVC: UIViewController {
         flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         flowLayout.scrollDirection = UICollectionView.ScrollDirection.vertical
         flowLayout.minimumInteritemSpacing = 0.0
-        mainCLV.collectionViewLayout = flowLayout
+        audioCLV.collectionViewLayout = flowLayout
     }
 }
 
@@ -36,26 +51,13 @@ extension DownloađAuioVC: UICollectionViewDelegate, UICollectionViewDataSource 
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 18
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: mainCLVCell.className, for: indexPath) as! mainCLVCell
-        cell.myView.layer.cornerRadius = 16
-        cell.myView.layer.masksToBounds = true
-        if indexPath.row == 0 {
-            cell.myImage.image = UIImage(named: "remove_ads.png")
-            cell.myLabel.text = "Remove ads"
-        } else if indexPath.row == 1 {
-            cell.myImage.image = UIImage(named: "select_language.png")
-            cell.myLabel.text = "Select language"
-        } else if indexPath.row == 2 {
-            cell.myImage.image = UIImage(named: "phrase_book.png")
-            cell.myLabel.text = "Phrase book"
-        } else if indexPath.row == 3 {
-            cell.myImage.image = UIImage(named: "download_audio.png")
-            cell.myLabel.text = "Download audio"
-        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: langCLVCell2.className, for: indexPath) as! langCLVCell2
+        cell.lineImage.image = UIImage(named: "line")
+        cell.myLabel.text = "a"
         return cell
     }
     
@@ -87,8 +89,8 @@ extension DownloađAuioVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if UIDevice.current.userInterfaceIdiom == .pad{
-            return CGSize(width: UIScreen.main.bounds.width / 2 - 20, height: 220)
+            return CGSize(width: UIScreen.main.bounds.width - 20, height: 100)
         }
-        return CGSize(width: (UIScreen.main.bounds.width - 50) / 2 - 10, height: 150)
+        return CGSize(width: UIScreen.main.bounds.width - 15, height: 60)
     }
 }

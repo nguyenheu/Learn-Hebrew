@@ -37,7 +37,7 @@ class SelectLanguageVC: UIViewController {
         selectedLanguageCLV.backgroundColor = UIColor.clear
         selectedLanguageCLV.register(UINib(nibName: langCLVCell.className, bundle: nil), forCellWithReuseIdentifier: langCLVCell.className)
         
-        saveButtonView.layer.cornerRadius = 25
+        saveButtonView.layer.cornerRadius = 18
         saveButtonView.layer.masksToBounds = true
         
         selectedLanguageCLV.isHidden = true
@@ -173,20 +173,20 @@ extension SelectLanguageVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.row == indexSelected {
             if UIDevice.current.userInterfaceIdiom == .pad{
-                return CGSize(width: UIScreen.main.bounds.width - 20, height: 60)
+                return CGSize(width: UIScreen.main.bounds.width - 100, height: 80)
             }
-            return CGSize(width: (UIScreen.main.bounds.width) - 10, height: 60)
+            return CGSize(width: (UIScreen.main.bounds.width) - 40, height: 60)
         }
         if indexPath.section == 0 || indexPath.section == 2 {
             if UIDevice.current.userInterfaceIdiom == .pad{
-                return CGSize(width: UIScreen.main.bounds.width - 20, height: 60)
+                return CGSize(width: UIScreen.main.bounds.width - 100, height: 80)
             }
-            return CGSize(width: (UIScreen.main.bounds.width) - 10, height: 60)
+            return CGSize(width: (UIScreen.main.bounds.width) - 40, height: 60)
         } else {
             if UIDevice.current.userInterfaceIdiom == .pad{
-                return CGSize(width: UIScreen.main.bounds.width - 20, height: 60)
+                return CGSize(width: UIScreen.main.bounds.width - 100, height: 80)
             }
-            return CGSize(width: (UIScreen.main.bounds.width) - 10, height: 60)
+            return CGSize(width: (UIScreen.main.bounds.width) - 40, height: 60)
         }
     }
 }

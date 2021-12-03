@@ -124,7 +124,10 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated:true)
         } else if indexPath.row == 3 {
-            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "DownloađAuioVC") as! DownloađAuioVC
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated:true)
         } else if indexPath.row == 4 {
             
         } else if indexPath.row == 5 {
@@ -182,7 +185,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if UIDevice.current.userInterfaceIdiom == .pad{
-            return CGSize(width: UIScreen.main.bounds.width / 2 - 20, height: 220)
+            return CGSize(width: (UIScreen.main.bounds.width - 50) / 2 - 10, height: 200)
         }
         return CGSize(width: (UIScreen.main.bounds.width - 50) / 2 - 10, height: 150)
     }

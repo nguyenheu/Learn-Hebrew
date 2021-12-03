@@ -13,6 +13,7 @@ class LessonVC: UIViewController {
     var index = 14
     var listLessonData:[LessonModel] = [LessonModel]()
     var listLanguage: [LangMenuModel] = [LangMenuModel]()
+
     @IBOutlet weak var titleLessonLabel: UILabel!
     @IBOutlet weak var lessonCLV: UICollectionView!
     
@@ -63,6 +64,8 @@ extension LessonVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var image: UIImage!
+        
+        
         if lesson == 0 {
             titleLessonLabel.text = "Lesson 001-010"
             image = UIImage(named: "0" + "0" + String(indexPath.item + 1))
@@ -133,7 +136,9 @@ extension LessonVC: UICollectionViewDelegate, UICollectionViewDataSource {
 //        cell.lessonView.layer.shadowColor = UIColor.black.cgColor
         cell.lessonImage.image = image
         if self.listLessonData[indexPath.row].languageId == self.listLanguage[indexPath.row].languageId  {
-            cell.lessonLabel.text = self.listLessonData[indexPath.row*60 + index + lesson*600].lessonName
+            let fullNameArr:[String] = self.listLessonData[indexPath.row*60 + index + lesson*600].lessonName.components(separatedBy: "@")
+           
+            cell.lessonLabel.text = fullNameArr[0] // + "  " + fullNameArr[1]
         }
         return cell
     }
@@ -169,7 +174,7 @@ extension LessonVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if UIDevice.current.userInterfaceIdiom == .pad{
-            return CGSize(width: UIScreen.main.bounds.width / 2 - 20, height: 220)
+            return CGSize(width: (UIScreen.main.bounds.width - 40) / 2 - 20, height: 250)
         }
         return CGSize(width: (UIScreen.main.bounds.width - 40) / 2 - 10, height: 180)
     }
