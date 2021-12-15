@@ -15,6 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         if let pathForFile = Bundle.main.path(forResource: "db", ofType: "db"){
             SqliteService.shared.loadInit(linkPath: pathForFile)
+            LessonDataService.shared.loadInit(linkPath: pathForFile)
+            LessonFileService.shared.loadInit(linkPath: pathForFile)
+            WordService.shared.loadInit(linkPath: pathForFile)
+            TopicService.shared.loadInit(linkPath: pathForFile)
+            AlphabetService.shared.loadInit(linkPath: pathForFile)
+            OppositeService.shared.loadInit(linkPath: pathForFile)
         }
         return true
     }

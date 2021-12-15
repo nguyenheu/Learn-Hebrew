@@ -145,7 +145,10 @@ extension LessonVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ReuseViewController") as! ReuseViewController
+        let vc = storyboard.instantiateViewController(withIdentifier: "WordListVC") as! WordListVC
+        vc.lessonID = listLessonData[indexPath.row*60 + index + lesson*600].lessonId
+        vc.lessonIDHebrew = listLessonData[indexPath.row*60 + vc.indexHE + lesson*600].lessonId
+        vc.listLessonData = listLessonData
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated:true)
     }
@@ -174,7 +177,7 @@ extension LessonVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if UIDevice.current.userInterfaceIdiom == .pad{
-            return CGSize(width: (UIScreen.main.bounds.width - 40) / 2 - 20, height: 250)
+            return CGSize(width: (UIScreen.main.bounds.width - 40) / 3 - 20, height: 180)
         }
         return CGSize(width: (UIScreen.main.bounds.width - 40) / 2 - 10, height: 180)
     }

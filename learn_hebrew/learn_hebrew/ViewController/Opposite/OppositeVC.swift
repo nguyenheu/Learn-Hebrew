@@ -10,11 +10,14 @@ import UIKit
 
 class OppositeVC: UIViewController {
 
-    @IBOutlet weak var mainCLV: UICollectionView!
+    @IBOutlet weak var oppositeCLV: UICollectionView!
+    @IBAction func backButton() {
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainCLV.backgroundColor = UIColor.clear
-        mainCLV.register(UINib(nibName: mainCLVCell.className, bundle: nil), forCellWithReuseIdentifier: mainCLVCell.className)
+        oppositeCLV.backgroundColor = UIColor.clear
+        oppositeCLV.register(UINib(nibName: oppositeCLVCell.className, bundle: nil), forCellWithReuseIdentifier: oppositeCLVCell.className)
         
         var cellWidth = 0
         if UIDevice.current.userInterfaceIdiom == .pad {
@@ -27,7 +30,7 @@ class OppositeVC: UIViewController {
         flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         flowLayout.scrollDirection = UICollectionView.ScrollDirection.vertical
         flowLayout.minimumInteritemSpacing = 0.0
-        mainCLV.collectionViewLayout = flowLayout
+        oppositeCLV.collectionViewLayout = flowLayout
     }
 }
 
@@ -37,30 +40,30 @@ extension OppositeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 18
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: mainCLVCell.className, for: indexPath) as! mainCLVCell
-        cell.myView.layer.cornerRadius = 16
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: oppositeCLVCell.className, for: indexPath) as! oppositeCLVCell
+        cell.myView.layer.cornerRadius = 30
         cell.myView.layer.masksToBounds = true
+        
+        cell.myImage.image = UIImage(named: "bright_purple")
         if indexPath.row == 0 {
-            cell.myImage.image = UIImage(named: "remove_ads.png")
-            cell.myLabel.text = "Remove ads"
+            cell.myLabel.text = "Nouns"
         } else if indexPath.row == 1 {
-            cell.myImage.image = UIImage(named: "select_language.png")
-            cell.myLabel.text = "Select language"
+            cell.myLabel.text = "Verbs"
         } else if indexPath.row == 2 {
-            cell.myImage.image = UIImage(named: "phrase_book.png")
-            cell.myLabel.text = "Phrase book"
-        } else if indexPath.row == 3 {
-            cell.myImage.image = UIImage(named: "download_audio.png")
-            cell.myLabel.text = "Download audio"
+            cell.myLabel.text = "Adjectives"
         }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "OppositeDetailVC") as! OppositeDetailVC
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated:true)
         
     }
     
@@ -88,9 +91,9 @@ extension OppositeVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if UIDevice.current.userInterfaceIdiom == .pad{
-            return CGSize(width: UIScreen.main.bounds.width / 2 - 20, height: 220)
+            return CGSize(width: UIScreen.main.bounds.width - 60, height: 60)
         }
-        return CGSize(width: (UIScreen.main.bounds.width - 50) / 2 - 10, height: 150)
+        return CGSize(width: UIScreen.main.bounds.width - 40, height: 60)
     }
 }
 

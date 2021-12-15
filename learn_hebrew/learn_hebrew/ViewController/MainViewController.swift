@@ -36,7 +36,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 18
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -74,36 +74,12 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.myImage.image = UIImage(named: "vocabulary.png")
             cell.myLabel.text = "Vocabulary"
         } else if indexPath.row == 7 {
-            cell.myImage.image = UIImage(named: "vocab_game.png")
-            cell.myLabel.text = "Vocab game"
-        } else if indexPath.row == 8 {
-            cell.myImage.image = UIImage(named: "cloze_test.png")
-            cell.myLabel.text = "Cloze test"
-        } else if indexPath.row == 9 {
-            cell.myImage.image = UIImage(named: "crossword_puzzle.png")
-            cell.myLabel.text = "Crossword puzzles"
-        } else if indexPath.row == 10 {
             cell.myImage.image = UIImage(named: "find_the_opposite.png")
             cell.myLabel.text = "Find the opposites"
-        } else if indexPath.row == 11 {
-            cell.myImage.image = UIImage(named: "lang-geo_quiz.png")
-            cell.myLabel.text = "Lang, Geo quiz"
-        } else if indexPath.row == 12 {
+        }else if indexPath.row == 8 {
             cell.myImage.image = UIImage(named: "translate.png")
             cell.myLabel.text = "Translate"
-        } else if indexPath.row == 13 {
-            cell.myImage.image = UIImage(named: "study_plan.png")
-            cell.myLabel.text = "Study plan"
-        } else if indexPath.row == 14 {
-            cell.myImage.image = UIImage(named: "your_score.png")
-            cell.myLabel.text = "Your score"
-        } else if indexPath.row == 15 {
-            cell.myImage.image = UIImage(named: "emergency.png")
-            cell.myLabel.text = "Emergency"
-        } else if indexPath.row == 16 {
-            cell.myImage.image = UIImage(named: "radio_station.png")
-            cell.myLabel.text = "Radio station"
-        } else if indexPath.row == 17 {
+        } else if indexPath.row == 9 {
             cell.myImage.image = UIImage(named: "other.png")
             cell.myLabel.text = "Other"
         }
@@ -129,30 +105,32 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated:true)
         } else if indexPath.row == 4 {
-            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "AlphabetVC") as! AlphabetVC
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated:true)
         } else if indexPath.row == 5 {
-            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "NumberVC") as! NumberVC
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated:true)
         }  else if indexPath.row == 6 {
-            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "VocabularyVC") as! VocabularyVC
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated:true)
         } else if indexPath.row == 7 {
-            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "OppositeVC") as! OppositeVC
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated:true)
         } else if indexPath.row == 8 {
-            
+            if let url = URL.init(string: "https://translate.google.com/"){ // link apps
+                if UIApplication.shared.canOpenURL(url){
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            }
         } else if indexPath.row == 9 {
-            
-        } else if indexPath.row == 11 {
-            
-        } else if indexPath.row == 12 {
-            
-        } else if indexPath.row == 13 {
-            
-        } else if indexPath.row == 14 {
-            
-        } else if indexPath.row == 15 {
-            
-        } else if indexPath.row == 16 {
-            
-        } else if indexPath.row == 17 {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "SettingVC") as! SettingVC
             vc.modalPresentationStyle = .fullScreen

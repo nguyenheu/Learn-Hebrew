@@ -7,4 +7,5 @@ target 'learn_hebrew' do
 
   # Pods for learn_hebrew
   pod 'SQLite.swift'
+  pod 'OSSSpeechKit'
 end

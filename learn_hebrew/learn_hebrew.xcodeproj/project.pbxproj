@@ -14,13 +14,18 @@
 		7B2181A3273594E000FEF2D4 /* lessonCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B2181A1273594E000FEF2D4 /* lessonCLVCell.xib */; };
 		7B2181A52735997100FEF2D4 /* db.db in Resources */ = {isa = PBXBuildFile; fileRef = 7B2181A42735997100FEF2D4 /* db.db */; };
 		7B2181A927359CEC00FEF2D4 /* LessonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2181A827359CEC00FEF2D4 /* LessonModel.swift */; };
+		7B360EF62763699200E4254C /* oppositeCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B360EF42763699200E4254C /* oppositeCLVCell.swift */; };
+		7B360EF72763699200E4254C /* oppositeCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B360EF52763699200E4254C /* oppositeCLVCell.xib */; };
+		7B68E1AC2769F84C00FD8E8D /* testVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68E1AB2769F84C00FD8E8D /* testVC.swift */; };
+		7B7367E327679B6900D7BD90 /* AlphabetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7367E227679B6900D7BD90 /* AlphabetModel.swift */; };
+		7B7367E627679E4200D7BD90 /* OppositeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7367E527679E4200D7BD90 /* OppositeModel.swift */; };
+		7B7367E82767A11000D7BD90 /* AlphabetDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7367E72767A11000D7BD90 /* AlphabetDetailVC.swift */; };
 		7B73A95327353A2300709D54 /* SelectLanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B73A95227353A2300709D54 /* SelectLanguageVC.swift */; };
 		7B73A95627353A5C00709D54 /* PhraseBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B73A95527353A5C00709D54 /* PhraseBookVC.swift */; };
 		7B73A95827353AE700709D54 /* DownloadAudioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B73A95727353AE700709D54 /* DownloadAudioVC.swift */; };
 		7B73A95C27353C2F00709D54 /* AlphabetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B73A95B27353C2F00709D54 /* AlphabetVC.swift */; };
 		7B73A96227353D3900709D54 /* VocabularyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B73A96127353D3900709D54 /* VocabularyVC.swift */; };
 		7B73A9652735401D00709D54 /* OppositeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B73A9642735401D00709D54 /* OppositeVC.swift */; };
-		7B73A968273540E500709D54 /* GeoQuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B73A967273540E500709D54 /* GeoQuizVC.swift */; };
 		7B7B335B27327DDE005E8B75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7B335A27327DDE005E8B75 /* AppDelegate.swift */; };
 		7B7B335D27327DDE005E8B75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7B335C27327DDE005E8B75 /* SceneDelegate.swift */; };
 		7B7B335F27327DDE005E8B75 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7B335E27327DDE005E8B75 /* MainViewController.swift */; };
@@ -28,21 +33,25 @@
 		7B7B336427327DDF005E8B75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B7B336327327DDF005E8B75 /* Assets.xcassets */; };
 		7B7B336727327DDF005E8B75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B7B336527327DDF005E8B75 /* LaunchScreen.storyboard */; };
 		7B7EBEF2273D086900B806A6 /* LanguageMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7EBEF1273D086900B806A6 /* LanguageMenuModel.swift */; };
-		7B83A4CE27363795008E49E9 /* StudyPlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B83A4CD27363795008E49E9 /* StudyPlanVC.swift */; };
-		7B83A4D1273637FD008E49E9 /* YourScoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B83A4D0273637FD008E49E9 /* YourScoreVC.swift */; };
-		7B83A4D32736381A008E49E9 /* EmergencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B83A4D22736381A008E49E9 /* EmergencyVC.swift */; };
+		7B861F1F275F6A900054E6C0 /* NumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B861F1E275F6A900054E6C0 /* NumberVC.swift */; };
+		7B861F26275F7D800054E6C0 /* WordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B861F25275F7D800054E6C0 /* WordModel.swift */; };
+		7B861F2A275F86220054E6C0 /* TopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B861F29275F86220054E6C0 /* TopicModel.swift */; };
+		7B861F32275FCD1C0054E6C0 /* VocabDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B861F31275FCD1C0054E6C0 /* VocabDetailVC.swift */; };
+		7B8D56BD275BC14D006EFD8D /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8D56BC275BC14D006EFD8D /* HelpViewController.swift */; };
+		7B8D56BF275BCA68006EFD8D /* WordListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8D56BE275BCA68006EFD8D /* WordListVC.swift */; };
 		7B92D9E72739888C009AA62B /* SqliteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B92D9E62739888C009AA62B /* SqliteService.swift */; };
+		7B9AD4D52761EA9C0084DD60 /* alphabetCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9AD4D32761EA9C0084DD60 /* alphabetCLVCell.swift */; };
+		7B9AD4D62761EA9C0084DD60 /* alphabetCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B9AD4D42761EA9C0084DD60 /* alphabetCLVCell.xib */; };
 		7BA1083E27392D7400F504F6 /* langCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA1083C27392D7400F504F6 /* langCLVCell.swift */; };
 		7BA1083F27392D7400F504F6 /* langCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BA1083D27392D7400F504F6 /* langCLVCell.xib */; };
 		7BA1531A275A002200C323A8 /* LessonFileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA15319275A002200C323A8 /* LessonFileModel.swift */; };
 		7BA1531D275A0BA500C323A8 /* audioCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA1531B275A0BA500C323A8 /* audioCLVCell.swift */; };
 		7BA1531E275A0BA500C323A8 /* audioCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BA1531C275A0BA500C323A8 /* audioCLVCell.xib */; };
-		7BAEF6CA2754CED4002FF10D /* ReuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAEF6C92754CED4002FF10D /* ReuseViewController.swift */; };
-		7BAEF6CD2754CF46002FF10D /* reuseCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAEF6CB2754CF46002FF10D /* reuseCLVCell.swift */; };
-		7BAEF6CE2754CF46002FF10D /* reuseCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BAEF6CC2754CF46002FF10D /* reuseCLVCell.xib */; };
+		7BBB654127675E900081022B /* OppositeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBB654027675E900081022B /* OppositeDetailVC.swift */; };
 		7BBD678627329022002C6AB2 /* mainCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBD678427329022002C6AB2 /* mainCLVCell.swift */; };
 		7BBD678727329022002C6AB2 /* mainCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BBD678527329022002C6AB2 /* mainCLVCell.xib */; };
 		7BBD678927329173002C6AB2 /* ExtensionMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBD678827329173002C6AB2 /* ExtensionMain.swift */; };
+		7BD1BB8A275E3AC60041C91F /* LessonDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1BB89275E3AC60041C91F /* LessonDataModel.swift */; };
 		7BE8E2F6274C9A7500965D7F /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8E2F5274C9A7500965D7F /* SettingVC.swift */; };
 		7BFF2063274BEE450072A766 /* langCLVCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF2061274BEE450072A766 /* langCLVCell2.swift */; };
 		7BFF2064274BEE450072A766 /* langCLVCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF2062274BEE450072A766 /* langCLVCell2.xib */; };
@@ -59,13 +68,18 @@
 		7B2181A1273594E000FEF2D4 /* lessonCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = lessonCLVCell.xib; sourceTree = "<group>"; };
 		7B2181A42735997100FEF2D4 /* db.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = db.db; path = ../../../database/db.db; sourceTree = "<group>"; };
 		7B2181A827359CEC00FEF2D4 /* LessonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonModel.swift; sourceTree = "<group>"; };
+		7B360EF42763699200E4254C /* oppositeCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oppositeCLVCell.swift; sourceTree = "<group>"; };
+		7B360EF52763699200E4254C /* oppositeCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = oppositeCLVCell.xib; sourceTree = "<group>"; };
+		7B68E1AB2769F84C00FD8E8D /* testVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testVC.swift; sourceTree = "<group>"; };
+		7B7367E227679B6900D7BD90 /* AlphabetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetModel.swift; sourceTree = "<group>"; };
+		7B7367E527679E4200D7BD90 /* OppositeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OppositeModel.swift; sourceTree = "<group>"; };
+		7B7367E72767A11000D7BD90 /* AlphabetDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetDetailVC.swift; sourceTree = "<group>"; };
 		7B73A95227353A2300709D54 /* SelectLanguageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLanguageVC.swift; sourceTree = "<group>"; };
 		7B73A95527353A5C00709D54 /* PhraseBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseBookVC.swift; sourceTree = "<group>"; };
 		7B73A95727353AE700709D54 /* DownloadAudioVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAudioVC.swift; sourceTree = "<group>"; };
 		7B73A95B27353C2F00709D54 /* AlphabetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetVC.swift; sourceTree = "<group>"; };
 		7B73A96127353D3900709D54 /* VocabularyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyVC.swift; sourceTree = "<group>"; };
 		7B73A9642735401D00709D54 /* OppositeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OppositeVC.swift; sourceTree = "<group>"; };
-		7B73A967273540E500709D54 /* GeoQuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoQuizVC.swift; sourceTree = "<group>"; };
 		7B7B335727327DDE005E8B75 /* learn_hebrew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learn_hebrew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B7B335A27327DDE005E8B75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B7B335C27327DDE005E8B75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,21 +89,25 @@
 		7B7B336627327DDF005E8B75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B7B336827327DDF005E8B75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B7EBEF1273D086900B806A6 /* LanguageMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageMenuModel.swift; sourceTree = "<group>"; };
-		7B83A4CD27363795008E49E9 /* StudyPlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPlanVC.swift; sourceTree = "<group>"; };
-		7B83A4D0273637FD008E49E9 /* YourScoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourScoreVC.swift; sourceTree = "<group>"; };
-		7B83A4D22736381A008E49E9 /* EmergencyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyVC.swift; sourceTree = "<group>"; };
+		7B861F1E275F6A900054E6C0 /* NumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberVC.swift; sourceTree = "<group>"; };
+		7B861F25275F7D800054E6C0 /* WordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModel.swift; sourceTree = "<group>"; };
+		7B861F29275F86220054E6C0 /* TopicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicModel.swift; sourceTree = "<group>"; };
+		7B861F31275FCD1C0054E6C0 /* VocabDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabDetailVC.swift; sourceTree = "<group>"; };
+		7B8D56BC275BC14D006EFD8D /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		7B8D56BE275BCA68006EFD8D /* WordListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListVC.swift; sourceTree = "<group>"; };
 		7B92D9E62739888C009AA62B /* SqliteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqliteService.swift; sourceTree = "<group>"; };
+		7B9AD4D32761EA9C0084DD60 /* alphabetCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alphabetCLVCell.swift; sourceTree = "<group>"; };
+		7B9AD4D42761EA9C0084DD60 /* alphabetCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = alphabetCLVCell.xib; sourceTree = "<group>"; };
 		7BA1083C27392D7400F504F6 /* langCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = langCLVCell.swift; sourceTree = "<group>"; };
 		7BA1083D27392D7400F504F6 /* langCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = langCLVCell.xib; sourceTree = "<group>"; };
 		7BA15319275A002200C323A8 /* LessonFileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonFileModel.swift; sourceTree = "<group>"; };
 		7BA1531B275A0BA500C323A8 /* audioCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioCLVCell.swift; sourceTree = "<group>"; };
 		7BA1531C275A0BA500C323A8 /* audioCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = audioCLVCell.xib; sourceTree = "<group>"; };
-		7BAEF6C92754CED4002FF10D /* ReuseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseViewController.swift; sourceTree = "<group>"; };
-		7BAEF6CB2754CF46002FF10D /* reuseCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reuseCLVCell.swift; sourceTree = "<group>"; };
-		7BAEF6CC2754CF46002FF10D /* reuseCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = reuseCLVCell.xib; sourceTree = "<group>"; };
+		7BBB654027675E900081022B /* OppositeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OppositeDetailVC.swift; sourceTree = "<group>"; };
 		7BBD678427329022002C6AB2 /* mainCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainCLVCell.swift; sourceTree = "<group>"; };
 		7BBD678527329022002C6AB2 /* mainCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = mainCLVCell.xib; sourceTree = "<group>"; };
 		7BBD678827329173002C6AB2 /* ExtensionMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionMain.swift; sourceTree = "<group>"; };
+		7BD1BB89275E3AC60041C91F /* LessonDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDataModel.swift; sourceTree = "<group>"; };
 		7BE8E2F5274C9A7500965D7F /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		7BFF2061274BEE450072A766 /* langCLVCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = langCLVCell2.swift; sourceTree = "<group>"; };
 		7BFF2062274BEE450072A766 /* langCLVCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = langCLVCell2.xib; sourceTree = "<group>"; };
@@ -125,11 +143,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7B7367E127679B5200D7BD90 /* Alphabet */ = {
+			isa = PBXGroup;
+			children = (
+				7B7367E227679B6900D7BD90 /* AlphabetModel.swift */,
+			);
+			path = Alphabet;
+			sourceTree = "<group>";
+		};
+		7B7367E427679E3100D7BD90 /* Opposite */ = {
+			isa = PBXGroup;
+			children = (
+				7B7367E527679E4200D7BD90 /* OppositeModel.swift */,
+			);
+			path = Opposite;
+			sourceTree = "<group>";
+		};
 		7B73A95427353A3800709D54 /* PhraseBook */ = {
 			isa = PBXGroup;
 			children = (
 				7B73A95527353A5C00709D54 /* PhraseBookVC.swift */,
 				7B21819E2735949400FEF2D4 /* LessonVC.swift */,
+				7B8D56BE275BCA68006EFD8D /* WordListVC.swift */,
 			);
 			path = PhraseBook;
 			sourceTree = "<group>";
@@ -138,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				7B73A96127353D3900709D54 /* VocabularyVC.swift */,
+				7B861F31275FCD1C0054E6C0 /* VocabDetailVC.swift */,
 			);
 			path = Vocabulary;
 			sourceTree = "<group>";
@@ -146,16 +182,9 @@
 			isa = PBXGroup;
 			children = (
 				7B73A9642735401D00709D54 /* OppositeVC.swift */,
+				7BBB654027675E900081022B /* OppositeDetailVC.swift */,
 			);
 			path = Opposite;
-			sourceTree = "<group>";
-		};
-		7B73A966273540BD00709D54 /* LangGeoQuiz */ = {
-			isa = PBXGroup;
-			children = (
-				7B73A967273540E500709D54 /* GeoQuizVC.swift */,
-			);
-			path = LangGeoQuiz;
 			sourceTree = "<group>";
 		};
 		7B7B334E27327DDE005E8B75 = {
@@ -198,9 +227,11 @@
 		7B7B336E27327DF5005E8B75 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7B2181A827359CEC00FEF2D4 /* LessonModel.swift */,
-				7B7EBEF1273D086900B806A6 /* LanguageMenuModel.swift */,
-				7BA15319275A002200C323A8 /* LessonFileModel.swift */,
+				7B7367E427679E3100D7BD90 /* Opposite */,
+				7B7367E127679B5200D7BD90 /* Alphabet */,
+				7B861F24275F7D5C0054E6C0 /* Word */,
+				7B861F23275F7D4C0054E6C0 /* Language */,
+				7B861F22275F7D300054E6C0 /* Lesson */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,20 +239,14 @@
 		7B7B336F27327E04005E8B75 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7BBD678427329022002C6AB2 /* mainCLVCell.swift */,
-				7BBD678527329022002C6AB2 /* mainCLVCell.xib */,
-				7B21819A273583B700FEF2D4 /* phraseTBVCell.swift */,
-				7B21819B273583B700FEF2D4 /* phraseTBVCell.xib */,
-				7B2181A0273594E000FEF2D4 /* lessonCLVCell.swift */,
-				7B2181A1273594E000FEF2D4 /* lessonCLVCell.xib */,
-				7BA1083C27392D7400F504F6 /* langCLVCell.swift */,
-				7BA1083D27392D7400F504F6 /* langCLVCell.xib */,
-				7BFF2061274BEE450072A766 /* langCLVCell2.swift */,
-				7BFF2062274BEE450072A766 /* langCLVCell2.xib */,
-				7BAEF6CB2754CF46002FF10D /* reuseCLVCell.swift */,
-				7BAEF6CC2754CF46002FF10D /* reuseCLVCell.xib */,
+				7B9AD4D22761EA730084DD60 /* Alphabet */,
+				7B7E52BF2760F4C300C6511B /* Language */,
+				7B7E52BE2760F4B100C6511B /* Lesson */,
+				7B7E52BD2760F47E00C6511B /* Main */,
 				7BA1531B275A0BA500C323A8 /* audioCLVCell.swift */,
 				7BA1531C275A0BA500C323A8 /* audioCLVCell.xib */,
+				7B360EF42763699200E4254C /* oppositeCLVCell.swift */,
+				7B360EF52763699200E4254C /* oppositeCLVCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -253,29 +278,48 @@
 		7B7B337427327E43005E8B75 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				7B8D56BA275BC0CF006EFD8D /* Number */,
+				7B8D56B9275BC0C7006EFD8D /* Alphabet */,
+				7B8D56B8275BC079006EFD8D /* Setting */,
 				7B83A4D427363AD3008E49E9 /* DownloadAudio */,
-				7B83A4CF273637E4008E49E9 /* Emergency */,
-				7B73A966273540BD00709D54 /* LangGeoQuiz */,
 				7B73A96327353FF000709D54 /* Opposite */,
 				7B73A96027353D2300709D54 /* Vocabulary */,
 				7B73A95427353A3800709D54 /* PhraseBook */,
 				7B73A95227353A2300709D54 /* SelectLanguageVC.swift */,
-				7B73A95B27353C2F00709D54 /* AlphabetVC.swift */,
-				7B83A4CD27363795008E49E9 /* StudyPlanVC.swift */,
-				7B83A4D0273637FD008E49E9 /* YourScoreVC.swift */,
-				7BE8E2F5274C9A7500965D7F /* SettingVC.swift */,
-				7BAEF6C92754CED4002FF10D /* ReuseViewController.swift */,
 				7B7B335E27327DDE005E8B75 /* MainViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		7B83A4CF273637E4008E49E9 /* Emergency */ = {
+		7B7E52BD2760F47E00C6511B /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				7B83A4D22736381A008E49E9 /* EmergencyVC.swift */,
+				7BBD678427329022002C6AB2 /* mainCLVCell.swift */,
+				7BBD678527329022002C6AB2 /* mainCLVCell.xib */,
 			);
-			path = Emergency;
+			path = Main;
+			sourceTree = "<group>";
+		};
+		7B7E52BE2760F4B100C6511B /* Lesson */ = {
+			isa = PBXGroup;
+			children = (
+				7B21819A273583B700FEF2D4 /* phraseTBVCell.swift */,
+				7B21819B273583B700FEF2D4 /* phraseTBVCell.xib */,
+				7B2181A0273594E000FEF2D4 /* lessonCLVCell.swift */,
+				7B2181A1273594E000FEF2D4 /* lessonCLVCell.xib */,
+			);
+			path = Lesson;
+			sourceTree = "<group>";
+		};
+		7B7E52BF2760F4C300C6511B /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				7BA1083C27392D7400F504F6 /* langCLVCell.swift */,
+				7BA1083D27392D7400F504F6 /* langCLVCell.xib */,
+				7BFF2061274BEE450072A766 /* langCLVCell2.swift */,
+				7BFF2062274BEE450072A766 /* langCLVCell2.xib */,
+			);
+			path = Language;
 			sourceTree = "<group>";
 		};
 		7B83A4D427363AD3008E49E9 /* DownloadAudio */ = {
@@ -284,6 +328,69 @@
 				7B73A95727353AE700709D54 /* DownloadAudioVC.swift */,
 			);
 			path = DownloadAudio;
+			sourceTree = "<group>";
+		};
+		7B861F22275F7D300054E6C0 /* Lesson */ = {
+			isa = PBXGroup;
+			children = (
+				7B2181A827359CEC00FEF2D4 /* LessonModel.swift */,
+				7BA15319275A002200C323A8 /* LessonFileModel.swift */,
+				7BD1BB89275E3AC60041C91F /* LessonDataModel.swift */,
+			);
+			path = Lesson;
+			sourceTree = "<group>";
+		};
+		7B861F23275F7D4C0054E6C0 /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				7B7EBEF1273D086900B806A6 /* LanguageMenuModel.swift */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
+		7B861F24275F7D5C0054E6C0 /* Word */ = {
+			isa = PBXGroup;
+			children = (
+				7B861F25275F7D800054E6C0 /* WordModel.swift */,
+				7B861F29275F86220054E6C0 /* TopicModel.swift */,
+			);
+			path = Word;
+			sourceTree = "<group>";
+		};
+		7B8D56B8275BC079006EFD8D /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				7BE8E2F5274C9A7500965D7F /* SettingVC.swift */,
+				7B8D56BC275BC14D006EFD8D /* HelpViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		7B8D56B9275BC0C7006EFD8D /* Alphabet */ = {
+			isa = PBXGroup;
+			children = (
+				7B73A95B27353C2F00709D54 /* AlphabetVC.swift */,
+				7B7367E72767A11000D7BD90 /* AlphabetDetailVC.swift */,
+				7B68E1AB2769F84C00FD8E8D /* testVC.swift */,
+			);
+			path = Alphabet;
+			sourceTree = "<group>";
+		};
+		7B8D56BA275BC0CF006EFD8D /* Number */ = {
+			isa = PBXGroup;
+			children = (
+				7B861F1E275F6A900054E6C0 /* NumberVC.swift */,
+			);
+			path = Number;
+			sourceTree = "<group>";
+		};
+		7B9AD4D22761EA730084DD60 /* Alphabet */ = {
+			isa = PBXGroup;
+			children = (
+				7B9AD4D32761EA9C0084DD60 /* alphabetCLVCell.swift */,
+				7B9AD4D42761EA9C0084DD60 /* alphabetCLVCell.xib */,
+			);
+			path = Alphabet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,6 +452,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B360EF72763699200E4254C /* oppositeCLVCell.xib in Resources */,
 				7B7B336727327DDF005E8B75 /* LaunchScreen.storyboard in Resources */,
 				7B7B336427327DDF005E8B75 /* Assets.xcassets in Resources */,
 				7B21819D273583B700FEF2D4 /* phraseTBVCell.xib in Resources */,
@@ -354,7 +462,7 @@
 				7BA1531E275A0BA500C323A8 /* audioCLVCell.xib in Resources */,
 				7B2181A3273594E000FEF2D4 /* lessonCLVCell.xib in Resources */,
 				7BFF2064274BEE450072A766 /* langCLVCell2.xib in Resources */,
-				7BAEF6CE2754CF46002FF10D /* reuseCLVCell.xib in Resources */,
+				7B9AD4D62761EA9C0084DD60 /* alphabetCLVCell.xib in Resources */,
 				7BA1083F27392D7400F504F6 /* langCLVCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,34 +516,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B7367E327679B6900D7BD90 /* AlphabetModel.swift in Sources */,
 				7B7B335F27327DDE005E8B75 /* MainViewController.swift in Sources */,
+				7B861F2A275F86220054E6C0 /* TopicModel.swift in Sources */,
 				7B7B335B27327DDE005E8B75 /* AppDelegate.swift in Sources */,
 				7B73A9652735401D00709D54 /* OppositeVC.swift in Sources */,
-				7B83A4D32736381A008E49E9 /* EmergencyVC.swift in Sources */,
 				7B21819F2735949400FEF2D4 /* LessonVC.swift in Sources */,
+				7B9AD4D52761EA9C0084DD60 /* alphabetCLVCell.swift in Sources */,
+				7B861F32275FCD1C0054E6C0 /* VocabDetailVC.swift in Sources */,
+				7B7367E627679E4200D7BD90 /* OppositeModel.swift in Sources */,
+				7B8D56BF275BCA68006EFD8D /* WordListVC.swift in Sources */,
+				7B7367E82767A11000D7BD90 /* AlphabetDetailVC.swift in Sources */,
+				7B360EF62763699200E4254C /* oppositeCLVCell.swift in Sources */,
 				7B73A96227353D3900709D54 /* VocabularyVC.swift in Sources */,
-				7B83A4D1273637FD008E49E9 /* YourScoreVC.swift in Sources */,
 				7B92D9E72739888C009AA62B /* SqliteService.swift in Sources */,
 				7BBD678927329173002C6AB2 /* ExtensionMain.swift in Sources */,
 				7B2181A2273594E000FEF2D4 /* lessonCLVCell.swift in Sources */,
 				7BFF2063274BEE450072A766 /* langCLVCell2.swift in Sources */,
+				7BBB654127675E900081022B /* OppositeDetailVC.swift in Sources */,
 				7B73A95827353AE700709D54 /* DownloadAudioVC.swift in Sources */,
 				7B7EBEF2273D086900B806A6 /* LanguageMenuModel.swift in Sources */,
+				7B68E1AC2769F84C00FD8E8D /* testVC.swift in Sources */,
 				7B21819C273583B700FEF2D4 /* phraseTBVCell.swift in Sources */,
+				7BD1BB8A275E3AC60041C91F /* LessonDataModel.swift in Sources */,
 				7BBD678627329022002C6AB2 /* mainCLVCell.swift in Sources */,
-				7B73A968273540E500709D54 /* GeoQuizVC.swift in Sources */,
 				7BE8E2F6274C9A7500965D7F /* SettingVC.swift in Sources */,
+				7B8D56BD275BC14D006EFD8D /* HelpViewController.swift in Sources */,
 				7B73A95327353A2300709D54 /* SelectLanguageVC.swift in Sources */,
 				7BA1531A275A002200C323A8 /* LessonFileModel.swift in Sources */,
+				7B861F26275F7D800054E6C0 /* WordModel.swift in Sources */,
 				7B73A95C27353C2F00709D54 /* AlphabetVC.swift in Sources */,
 				7BA1531D275A0BA500C323A8 /* audioCLVCell.swift in Sources */,
 				7B73A95627353A5C00709D54 /* PhraseBookVC.swift in Sources */,
 				7BA1083E27392D7400F504F6 /* langCLVCell.swift in Sources */,
 				7B7B335D27327DDE005E8B75 /* SceneDelegate.swift in Sources */,
-				7BAEF6CA2754CED4002FF10D /* ReuseViewController.swift in Sources */,
 				7B2181A927359CEC00FEF2D4 /* LessonModel.swift in Sources */,
-				7BAEF6CD2754CF46002FF10D /* reuseCLVCell.swift in Sources */,
-				7B83A4CE27363795008E49E9 /* StudyPlanVC.swift in Sources */,
+				7B861F1F275F6A900054E6C0 /* NumberVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

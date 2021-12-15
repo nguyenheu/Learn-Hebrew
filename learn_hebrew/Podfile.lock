@@ -1,18 +1,22 @@
 PODS:
+  - OSSSpeechKit (0.3.2)
   - SQLite.swift (0.13.0):
     - SQLite.swift/standard (= 0.13.0)
   - SQLite.swift/standard (0.13.0)
 
 DEPENDENCIES:
+  - OSSSpeechKit
   - SQLite.swift
 
 SPEC REPOS:
   trunk:
+    - OSSSpeechKit
     - SQLite.swift
 
 SPEC CHECKSUMS:
+  OSSSpeechKit: d16c1a0b7d25ed23c7d05397ea168037d701e3fc
   SQLite.swift: 8add701609fd0ef78d097dcc75d20a9782e6f5fc
 
-PODFILE CHECKSUM: 0998b00e4b2d0894849e567847b57ea6e07d65d9
+PODFILE CHECKSUM: c4917a675e7e924114a65f24a44a1c02d57a8f90
 
 COCOAPODS: 1.11.2

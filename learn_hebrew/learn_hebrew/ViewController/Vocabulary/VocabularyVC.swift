@@ -1,4 +1,3 @@
-
 //
 //  ViewController.swift
 //  learn_hebrew
@@ -9,12 +8,45 @@
 import UIKit
 
 class VocabularyVC: UIViewController {
-
-    @IBOutlet weak var mainCLV: UICollectionView!
+    var index = 14
+    var indexHE = 21
+    var lesson = 0
+    var topicId = 0
+    var listDataTopic:[TopicModel] = [TopicModel]()
+    var listDataWord:[WordModel] = [WordModel]()
+    var listLessonFullData: [LessonDataModel] = [LessonDataModel]()
+    @IBOutlet weak var vocabCLV: UICollectionView!
+    @IBAction func backButton() {
+        dismiss(animated: true, completion: nil)
+    }
+    let userDefaults = UserDefaults.standard
+    let SAVE_KEY = "saveKey"
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainCLV.backgroundColor = UIColor.clear
-        mainCLV.register(UINib(nibName: mainCLVCell.className, bundle: nil), forCellWithReuseIdentifier: mainCLVCell.className)
+        vocabCLV.backgroundColor = UIColor.clear
+        vocabCLV.register(UINib(nibName: audioCLVCell.className, bundle: nil), forCellWithReuseIdentifier: audioCLVCell.className)
+
+        TopicService.shared.getDataTopic(){ listDataTopic, error in
+            if let listDataTopic = listDataTopic{
+                self.listDataTopic = listDataTopic
+            }
+        }
+        
+        WordService.shared.getDataWord(){ listDataWord, error in
+            if let listDataWord = listDataWord{
+                self.listDataWord = listDataWord
+            }
+        }
+        
+        LessonDataService.shared.getDataLessonData(){ listLessonFullData, error in
+            if let listLessonFullData = listLessonFullData{
+                self.listLessonFullData = listLessonFullData
+            }
+        }
+        
+        if let saveSuccessful = userDefaults.integer(forKey: SAVE_KEY) as? Int{
+            index = saveSuccessful
+        }
         
         var cellWidth = 0
         if UIDevice.current.userInterfaceIdiom == .pad {
@@ -27,7 +59,7 @@ class VocabularyVC: UIViewController {
         flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         flowLayout.scrollDirection = UICollectionView.ScrollDirection.vertical
         flowLayout.minimumInteritemSpacing = 0.0
-        mainCLV.collectionViewLayout = flowLayout
+        vocabCLV.collectionViewLayout = flowLayout
     }
 }
 
@@ -37,30 +69,48 @@ extension VocabularyVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 18
+        return 42
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: mainCLVCell.className, for: indexPath) as! mainCLVCell
-        cell.myView.layer.cornerRadius = 16
-        cell.myView.layer.masksToBounds = true
-        if indexPath.row == 0 {
-            cell.myImage.image = UIImage(named: "remove_ads.png")
-            cell.myLabel.text = "Remove ads"
-        } else if indexPath.row == 1 {
-            cell.myImage.image = UIImage(named: "select_language.png")
-            cell.myLabel.text = "Select language"
-        } else if indexPath.row == 2 {
-            cell.myImage.image = UIImage(named: "phrase_book.png")
-            cell.myLabel.text = "Phrase book"
-        } else if indexPath.row == 3 {
-            cell.myImage.image = UIImage(named: "download_audio.png")
-            cell.myLabel.text = "Download audio"
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: audioCLVCell.className, for: indexPath) as! audioCLVCell
+        let fullNameArr:[String] = self.listDataTopic[indexPath.row + indexHE*42].topic.components(separatedBy: "@")
+
+        cell.heLanguageLabel.text = fullNameArr[0]
+        cell.translateLanguageLabel.text = fullNameArr[1]
+
+        if index == 54{
+            let fullNameArr2:[String] = self.listDataTopic[indexPath.row + 14*42].topic.components(separatedBy: "@")
+            cell.languageLabel.text = fullNameArr2[0]
+        } else if index < 54 {
+            let fullNameArr3:[String] = self.listDataTopic[indexPath.row + index*42].topic.components(separatedBy: "@")
+            cell.languageLabel.text = fullNameArr3[0]
+        } else if index > 54 {
+            let fullNameArr3:[String] = self.listDataTopic[indexPath.row + (index-1)*42].topic.components(separatedBy: "@")
+            cell.languageLabel.text = fullNameArr3[0]
         }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "VocabDetailVC") as! VocabDetailVC
+        vc.index = index
+        vc.listDataWord = listDataWord
+        vc.listDataTopic = listDataTopic
+//        if vc.index == 54 {
+//            vc.topicId = listDataWord[indexPath.row + 14*vc.topicId + lesson*1904].word_id
+//            vc.topicIdHebrew = listDataWord[indexPath.row + 14*vc.topicId + lesson*1904].word_id
+//        } else if index < 54 {
+//            vc.topicId = listDataWord[indexPath.row + index*vc.topicId + lesson*1904].word_id
+//            vc.topicIdHebrew = listDataWord[indexPath.row + indexHE*vc.topicId + lesson*1904].word_id
+//        } else if index > 54 {
+//            vc.topicId = listDataWord[indexPath.row + (index-1)*vc.topicId + lesson*1904].word_id
+//            vc.topicIdHebrew = listDataWord[indexPath.row].word_id
+//        }
+        vc.topicId = listDataWord[indexPath.row + lesson*topicId].word_id
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated:true)
         
     }
     
@@ -88,8 +138,8 @@ extension VocabularyVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if UIDevice.current.userInterfaceIdiom == .pad{
-            return CGSize(width: UIScreen.main.bounds.width / 2 - 20, height: 220)
+            return CGSize(width: UIScreen.main.bounds.width - 60, height: 129)
         }
-        return CGSize(width: (UIScreen.main.bounds.width - 50) / 2 - 10, height: 150)
+        return CGSize(width: UIScreen.main.bounds.width - 40, height: 129)
     }
 }
