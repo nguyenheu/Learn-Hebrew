@@ -10,11 +10,10 @@ import UIKit
 class VocabularyVC: UIViewController {
     var index = 14
     var indexHE = 21
-    var lesson = 0
     var topicId = 0
+    var listTopic:[TopicModel] = [TopicModel]()
     var listDataTopic:[TopicModel] = [TopicModel]()
-    var listDataWord:[WordModel] = [WordModel]()
-    var listLessonFullData: [LessonDataModel] = [LessonDataModel]()
+    
     @IBOutlet weak var vocabCLV: UICollectionView!
     @IBAction func backButton() {
         dismiss(animated: true, completion: nil)
@@ -24,29 +23,19 @@ class VocabularyVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         vocabCLV.backgroundColor = UIColor.clear
-        vocabCLV.register(UINib(nibName: audioCLVCell.className, bundle: nil), forCellWithReuseIdentifier: audioCLVCell.className)
+        vocabCLV.register(UINib(nibName: vocabCLVCell.className, bundle: nil), forCellWithReuseIdentifier: vocabCLVCell.className)
 
         TopicService.shared.getDataTopic(){ listDataTopic, error in
             if let listDataTopic = listDataTopic{
                 self.listDataTopic = listDataTopic
-            }
-        }
-        
-        WordService.shared.getDataWord(){ listDataWord, error in
-            if let listDataWord = listDataWord{
-                self.listDataWord = listDataWord
-            }
-        }
-        
-        LessonDataService.shared.getDataLessonData(){ listLessonFullData, error in
-            if let listLessonFullData = listLessonFullData{
-                self.listLessonFullData = listLessonFullData
+                self.getListTopic()
             }
         }
         
         if let saveSuccessful = userDefaults.integer(forKey: SAVE_KEY) as? Int{
             index = saveSuccessful
         }
+        
         
         var cellWidth = 0
         if UIDevice.current.userInterfaceIdiom == .pad {
@@ -61,6 +50,15 @@ class VocabularyVC: UIViewController {
         flowLayout.minimumInteritemSpacing = 0.0
         vocabCLV.collectionViewLayout = flowLayout
     }
+    func getListTopic() {
+        for item in 1..<listDataTopic.count {
+            if listDataTopic[item].lan_code == "HE"
+            {
+                listTopic.append(listDataTopic[item])
+            }
+        }
+    }
+    
 }
 
 extension VocabularyVC: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -69,25 +67,29 @@ extension VocabularyVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 42
+        return listTopic.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: audioCLVCell.className, for: indexPath) as! audioCLVCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: vocabCLVCell.className, for: indexPath) as! vocabCLVCell
+        cell.vocabSubView.layer.cornerRadius = 16
+        cell.vocabSubView.layer.shadowOpacity = 0.1
+        cell.vocabSubView.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        cell.vocabSubView.layer.shadowRadius = 0.0
+        cell.vocabSubView.layer.shadowColor = UIColor.black.cgColor
+        
         let fullNameArr:[String] = self.listDataTopic[indexPath.row + indexHE*42].topic.components(separatedBy: "@")
-
         cell.heLanguageLabel.text = fullNameArr[0]
         cell.translateLanguageLabel.text = fullNameArr[1]
-
         if index == 54{
             let fullNameArr2:[String] = self.listDataTopic[indexPath.row + 14*42].topic.components(separatedBy: "@")
-            cell.languageLabel.text = fullNameArr2[0]
+            cell.otherLanguageLabel.text = fullNameArr2[0]
         } else if index < 54 {
             let fullNameArr3:[String] = self.listDataTopic[indexPath.row + index*42].topic.components(separatedBy: "@")
-            cell.languageLabel.text = fullNameArr3[0]
+            cell.otherLanguageLabel.text = fullNameArr3[0]
         } else if index > 54 {
             let fullNameArr3:[String] = self.listDataTopic[indexPath.row + (index-1)*42].topic.components(separatedBy: "@")
-            cell.languageLabel.text = fullNameArr3[0]
+            cell.otherLanguageLabel.text = fullNameArr3[0]
         }
         return cell
     }
@@ -95,20 +97,30 @@ extension VocabularyVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "VocabDetailVC") as! VocabDetailVC
-        vc.index = index
-        vc.listDataWord = listDataWord
-        vc.listDataTopic = listDataTopic
-//        if vc.index == 54 {
-//            vc.topicId = listDataWord[indexPath.row + 14*vc.topicId + lesson*1904].word_id
-//            vc.topicIdHebrew = listDataWord[indexPath.row + 14*vc.topicId + lesson*1904].word_id
-//        } else if index < 54 {
-//            vc.topicId = listDataWord[indexPath.row + index*vc.topicId + lesson*1904].word_id
-//            vc.topicIdHebrew = listDataWord[indexPath.row + indexHE*vc.topicId + lesson*1904].word_id
-//        } else if index > 54 {
-//            vc.topicId = listDataWord[indexPath.row + (index-1)*vc.topicId + lesson*1904].word_id
-//            vc.topicIdHebrew = listDataWord[indexPath.row].word_id
-//        }
-        vc.topicId = listDataWord[indexPath.row + lesson*topicId].word_id
+
+        if index == 54 {
+            let fullNameArr2:[String] = self.listDataTopic[indexPath.row + 14*42].topic.components(separatedBy: "@")
+            vc.wordString = fullNameArr2[0]
+            vc.topicId = listDataTopic[indexPath.row+14*42].topic_id
+            vc.topicIdHE = listDataTopic[indexPath.row + indexHE*42].topic_id
+            vc.word = self.listDataTopic[indexPath.row+14*42].lan_code
+            vc.wordHE = self.listDataTopic[indexPath.row+indexHE*42].lan_code
+        } else if index < 54 {
+            let fullNameArr3:[String] = self.listDataTopic[indexPath.row + index*42].topic.components(separatedBy: "@")
+            vc.wordString = fullNameArr3[0]
+            vc.topicId = listDataTopic[indexPath.row+index*42].topic_id
+            vc.topicIdHE = listDataTopic[indexPath.row + indexHE*42].topic_id
+            vc.word = self.listDataTopic[indexPath.row+index*42].lan_code
+            vc.wordHE = self.listDataTopic[indexPath.row+indexHE*42].lan_code
+        } else if index > 54 {
+            let fullNameArr3:[String] = self.listDataTopic[indexPath.row + (index-1)*42].topic.components(separatedBy: "@")
+            vc.wordString = fullNameArr3[0]
+            vc.topicId = listDataTopic[indexPath.row+(index-1)*42].topic_id
+            vc.topicIdHE = listDataTopic[indexPath.row + indexHE*42].topic_id
+            vc.word = self.listDataTopic[indexPath.row+(index-1)*42].lan_code
+            vc.wordHE = self.listDataTopic[indexPath.row+indexHE*42].lan_code
+        }
+        
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated:true)
         
@@ -129,7 +141,7 @@ extension VocabularyVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 15
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -138,8 +150,8 @@ extension VocabularyVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if UIDevice.current.userInterfaceIdiom == .pad{
-            return CGSize(width: UIScreen.main.bounds.width - 60, height: 129)
+            return CGSize(width: UIScreen.main.bounds.width - 60, height: 120)
         }
-        return CGSize(width: UIScreen.main.bounds.width - 40, height: 129)
+        return CGSize(width: UIScreen.main.bounds.width - 40, height: 120)
     }
 }

@@ -7,7 +7,9 @@
 
 import Foundation
 import UIKit
-
+var allLanguage: [String] = ["AD","AF","AM","AR","BE","BG","BN","BS","CA","CS", "DA","DE","EL","EM","EN","EO","ES","ET","FA","FI","FR","HE","HI","HR","HU","HY","ID","IT","JA","KA","KK","KN","KO","LT","LV","MK","MR","NL","NN","NO","PA","PL","PT","PX","RO","RU","SK","SL","SQ","SR","SV","TA","TE","TH","TR","UK","UR","VI","ZH"]
+var allLanguageWithNoHE : [String] = ["AD","AF","AM","AR","BE","BG","BN","BS","CA","CS","DA","DE","EL","EM","EN","EO","ES","ET","FA","FI","FR","HI","HR","HU","HY","ID","IT","JA","KA","KK","KN","KO","LT","LV","MK","MR","NL","NN","NO","PA","PL","PT","PX","RO","RU","SK","SL","SQ","SR","SV","TA","TE","TH","TI","TR","UK","UR","VI","ZH"]
+var allTopicId: [Int] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42]
 struct LangMenuModel {
     var image : UIImage!
     var textCode: String

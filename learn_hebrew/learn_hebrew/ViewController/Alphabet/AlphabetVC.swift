@@ -61,21 +61,14 @@ extension AlphabetVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: alphabetCLVCell.className, for: indexPath) as! alphabetCLVCell
-        if indexPath.row < 10 {
-            cell.alphabetImage.image = UIImage(named: String(0) + String(indexPath.row+1) + "a")
-            if indexPath.row == 9 {
-                cell.alphabetImage.image = UIImage(named: "10a")
-            }
-        } else if indexPath.row >= 10 {
-            cell.alphabetImage.image = UIImage(named: String(indexPath.row+1) + "a")
-        }
-        
+
+        cell.alphabetImage.image = UIImage(named: String(indexPath.row+1) + "a")
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "testVC") as! testVC
+        let vc = storyboard.instantiateViewController(withIdentifier: "AlphabetDetailVC") as! AlphabetDetailVC
         vc.listDataLanguageHE = listDataLanguageHE
         vc.listDataAlphabet = listDataAlphabet
         vc.numberAlphabet = indexPath.row

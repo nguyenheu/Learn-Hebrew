@@ -9,16 +9,21 @@
 import UIKit
 
 class OppositeDetailVC: UIViewController {
-
-    @IBOutlet weak var oppositeCLV: UICollectionView!
+    var listDataOpposite:[OppositeModel] = [OppositeModel]()
     @IBAction func backButton() {
         dismiss(animated: true, completion: nil)
     }
+    @IBOutlet weak var matchWordCLV: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        oppositeCLV.backgroundColor = UIColor.clear
-        oppositeCLV.register(UINib(nibName: oppositeCLVCell.className, bundle: nil), forCellWithReuseIdentifier: oppositeCLVCell.className)
-        
+        matchWordCLV.backgroundColor = UIColor.clear
+        matchWordCLV.register(UINib(nibName: typeWordCLVCell.className, bundle: nil), forCellWithReuseIdentifier: typeWordCLVCell.className)
+
+        OppositeService.shared.getDataOpposite(){ listDataOpposite, error in
+            if let listDataOpposite = listDataOpposite{
+                self.listDataOpposite = listDataOpposite
+            }
+        }
         var cellWidth = 0
         if UIDevice.current.userInterfaceIdiom == .pad {
             cellWidth = Int(UIScreen.main.bounds.width) / 5 - 10
@@ -30,9 +35,27 @@ class OppositeDetailVC: UIViewController {
         flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         flowLayout.scrollDirection = UICollectionView.ScrollDirection.vertical
         flowLayout.minimumInteritemSpacing = 0.0
-        oppositeCLV.collectionViewLayout = flowLayout
+        matchWordCLV.collectionViewLayout = flowLayout
+        
     }
+    @objc func handleLongPress(gesture : UILongPressGestureRecognizer!) {
+           if gesture.state != .ended {
+               return
+           }
+        let p = gesture.location(in: self.matchWordCLV)
+
+        if let indexPath = self.matchWordCLV.indexPathForItem(at: p) {
+            // get the cell at indexPath (the one you long pressed)
+            _ = self.matchWordCLV.cellForItem(at: indexPath)
+            // do stuff with the cell
+        } else {
+            print("couldn't find index path")
+        }
+    }
+    
 }
+let a = OppositeDetailVC()
+let lpgr = UILongPressGestureRecognizer(target: a, action: #selector(OppositeDetailVC.handleLongPress))
 
 extension OppositeDetailVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -40,30 +63,32 @@ extension OppositeDetailVC: UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: oppositeCLVCell.className, for: indexPath) as! oppositeCLVCell
-        cell.myView.layer.cornerRadius = 30
-        cell.myView.layer.masksToBounds = true
-        
-        cell.myImage.image = UIImage(named: "bright_purple")
-        if indexPath.row == 0 {
-            cell.myLabel.text = "Nouns"
-        } else if indexPath.row == 1 {
-            cell.myLabel.text = "Verbs"
-        } else if indexPath.row == 2 {
-            cell.myLabel.text = "Adjectives"
-        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: typeWordCLVCell.className, for: indexPath) as! typeWordCLVCell
+        cell.viewRight1.layer.cornerRadius = 10
+        cell.viewRight2.layer.cornerRadius = 10
+        cell.viewRight3.layer.cornerRadius = 10
+        cell.viewRight4.layer.cornerRadius = 10
+        cell.viewMid1.layer.cornerRadius = 10
+        cell.viewMid2.layer.cornerRadius = 10
+        cell.viewMid3.layer.cornerRadius = 10
+        cell.viewMid4.layer.cornerRadius = 10
+        cell.viewLeft1.layer.cornerRadius = 10
+        cell.viewLeft2.layer.cornerRadius = 10
+        cell.viewLeft3.layer.cornerRadius = 10
+        cell.viewLeft4.layer.cornerRadius = 10
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "OppositeVC") as! OppositeVC
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated:true)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: typeWordCLVCell.className, for: indexPath) as! typeWordCLVCell
+        UIView.animateKeyframes(withDuration: 0.25, delay: 0.0, options: UIView.KeyframeAnimationOptions(rawValue: 7), animations: {
+            cell.viewRight1.frame.origin.y+=200
+
+        },completion: nil)
         
     }
     
@@ -91,9 +116,8 @@ extension OppositeDetailVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if UIDevice.current.userInterfaceIdiom == .pad{
-            return CGSize(width: UIScreen.main.bounds.width - 60, height: 60)
+            return CGSize(width: UIScreen.main.bounds.width - 40, height: 420)
         }
-        return CGSize(width: UIScreen.main.bounds.width - 40, height: 60)
+        return CGSize(width: UIScreen.main.bounds.width - 20, height: 420)
     }
 }
-

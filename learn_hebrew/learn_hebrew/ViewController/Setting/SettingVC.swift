@@ -8,7 +8,7 @@
 import UIKit
 
 class SettingVC: UIViewController {
-
+    var indexSelected = -1
     @IBOutlet weak var settingCLV: UICollectionView!
     @IBAction func backButton() {
         dismiss(animated: true, completion: nil)
@@ -16,7 +16,7 @@ class SettingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         settingCLV.backgroundColor = UIColor.clear
-        settingCLV.register(UINib(nibName: langCLVCell2.className, bundle: nil), forCellWithReuseIdentifier: langCLVCell2.className)
+        settingCLV.register(UINib(nibName: settingCLVCell.className, bundle: nil), forCellWithReuseIdentifier: settingCLVCell.className)
         
         var cellWidth = 0
         if UIDevice.current.userInterfaceIdiom == .pad {
@@ -39,40 +39,42 @@ extension SettingVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: langCLVCell2.className, for: indexPath) as! langCLVCell2
-        cell.myImage.image = UIImage(named: "down.png")
-        cell.lineImage.image = UIImage(named: "line.png")
-        cell.myLabel.font = UIFont.boldSystemFont(ofSize: 17.0)
-        cell.myLabel.textColor = .black
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: settingCLVCell.className, for: indexPath) as! settingCLVCell
+        cell.settingImage.image = UIImage(named: "down.png")
+
         if indexPath.row == 0 {
-            cell.myLabel.text = "01  Delete zip files"
+            cell.settingLabel.text = "01  Delete zip files"
         } else if indexPath.row == 1 {
-            cell.myLabel.text = "02  Volumn setting"
-        } else if indexPath.row == 2 {
-            cell.myLabel.text = "03  Text size settings"
-        } else if indexPath.row == 3 {
-            cell.myLabel.text = "04  Help"
+            cell.settingLabel.text = "02  Volumn setting"
+            cell.firstExpandLabel.text = "Volumn level"
+        }
+//        else if indexPath.row == 2 {
+//            cell.settingLabel.text = "03  Text size settings"
+//            cell.firstExpandLabel.text = "Native language font size"
+//            cell.secondExpandLabel.text = "Target language font size"
+//            cell.thirdExpandLabel.text = "Menu font size"
+//        }
+        else if indexPath.row == 2 {
+            cell.settingLabel.text = "03  Help"
         }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        indexSelected = indexPath.row
         if indexPath.row == 0 {
             
-        } else if indexPath.row == 1 {
-            
         } else if indexPath.row == 2 {
-            
-        } else if indexPath.row == 3 {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "HelpViewController") as! HelpViewController
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated:true)
-        }        
+        }
+        settingCLV.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -98,9 +100,24 @@ extension SettingVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if UIDevice.current.userInterfaceIdiom == .pad{
-            return CGSize(width: UIScreen.main.bounds.width - 20, height: 60)
+        if indexPath.row == indexSelected {
+            if indexPath.row == 1 {
+                if UIDevice.current.userInterfaceIdiom == .pad{
+                    return CGSize(width: UIScreen.main.bounds.width - 40, height: 110)
+                }
+                return CGSize(width: (UIScreen.main.bounds.width) - 40, height: 110)
+            }
+//            else if indexPath.row == 2 {
+//                if UIDevice.current.userInterfaceIdiom == .pad{
+//                    return CGSize(width: UIScreen.main.bounds.width - 40, height: 200)
+//                }
+//                return CGSize(width: (UIScreen.main.bounds.width) - 40, height: 200)
+//            }
+            
         }
-        return CGSize(width: UIScreen.main.bounds.width - 10, height: 40)
+        if UIDevice.current.userInterfaceIdiom == .pad{
+            return CGSize(width: UIScreen.main.bounds.width - 40, height: 40)
+        }
+        return CGSize(width: UIScreen.main.bounds.width - 40, height: 40)
     }
 }

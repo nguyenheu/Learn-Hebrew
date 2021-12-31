@@ -16,7 +16,8 @@
 		7B2181A927359CEC00FEF2D4 /* LessonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2181A827359CEC00FEF2D4 /* LessonModel.swift */; };
 		7B360EF62763699200E4254C /* oppositeCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B360EF42763699200E4254C /* oppositeCLVCell.swift */; };
 		7B360EF72763699200E4254C /* oppositeCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B360EF52763699200E4254C /* oppositeCLVCell.xib */; };
-		7B68E1AC2769F84C00FD8E8D /* testVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68E1AB2769F84C00FD8E8D /* testVC.swift */; };
+		7B6F494D277CBD4D005732E4 /* vocabCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6F494B277CBD4D005732E4 /* vocabCLVCell.swift */; };
+		7B6F494E277CBD4D005732E4 /* vocabCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B6F494C277CBD4D005732E4 /* vocabCLVCell.xib */; };
 		7B7367E327679B6900D7BD90 /* AlphabetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7367E227679B6900D7BD90 /* AlphabetModel.swift */; };
 		7B7367E627679E4200D7BD90 /* OppositeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7367E527679E4200D7BD90 /* OppositeModel.swift */; };
 		7B7367E82767A11000D7BD90 /* AlphabetDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7367E72767A11000D7BD90 /* AlphabetDetailVC.swift */; };
@@ -33,6 +34,10 @@
 		7B7B336427327DDF005E8B75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B7B336327327DDF005E8B75 /* Assets.xcassets */; };
 		7B7B336727327DDF005E8B75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B7B336527327DDF005E8B75 /* LaunchScreen.storyboard */; };
 		7B7EBEF2273D086900B806A6 /* LanguageMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7EBEF1273D086900B806A6 /* LanguageMenuModel.swift */; };
+		7B820544276B9A5E0048D785 /* WordIds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B820543276B9A5E0048D785 /* WordIds.swift */; };
+		7B820547276BAB720048D785 /* settingCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B820545276BAB720048D785 /* settingCLVCell.swift */; };
+		7B820548276BAB720048D785 /* settingCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B820546276BAB720048D785 /* settingCLVCell.xib */; };
+		7B82054A276BBDB50048D785 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B820549276BBDB50048D785 /* RecordViewController.swift */; };
 		7B861F1F275F6A900054E6C0 /* NumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B861F1E275F6A900054E6C0 /* NumberVC.swift */; };
 		7B861F26275F7D800054E6C0 /* WordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B861F25275F7D800054E6C0 /* WordModel.swift */; };
 		7B861F2A275F86220054E6C0 /* TopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B861F29275F86220054E6C0 /* TopicModel.swift */; };
@@ -52,7 +57,12 @@
 		7BBD678727329022002C6AB2 /* mainCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BBD678527329022002C6AB2 /* mainCLVCell.xib */; };
 		7BBD678927329173002C6AB2 /* ExtensionMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBD678827329173002C6AB2 /* ExtensionMain.swift */; };
 		7BD1BB8A275E3AC60041C91F /* LessonDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1BB89275E3AC60041C91F /* LessonDataModel.swift */; };
+		7BE8CAB927706A6900AFA47B /* recordTBVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8CAB727706A6900AFA47B /* recordTBVCell.swift */; };
+		7BE8CABA27706A6900AFA47B /* recordTBVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BE8CAB827706A6900AFA47B /* recordTBVCell.xib */; };
+		7BE8CABC27706F6300AFA47B /* AKAudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8CABB27706F6300AFA47B /* AKAudioRecorder.swift */; };
 		7BE8E2F6274C9A7500965D7F /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8E2F5274C9A7500965D7F /* SettingVC.swift */; };
+		7BFE9B23277DA6E8008D7ADA /* typeWordCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFE9B21277DA6E8008D7ADA /* typeWordCLVCell.swift */; };
+		7BFE9B24277DA6E8008D7ADA /* typeWordCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BFE9B22277DA6E8008D7ADA /* typeWordCLVCell.xib */; };
 		7BFF2063274BEE450072A766 /* langCLVCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF2061274BEE450072A766 /* langCLVCell2.swift */; };
 		7BFF2064274BEE450072A766 /* langCLVCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF2062274BEE450072A766 /* langCLVCell2.xib */; };
 		A78481951063253670D06E33 /* Pods_learn_hebrew.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 592AC4C5EEAA0F6682D2B9A7 /* Pods_learn_hebrew.framework */; };
@@ -70,7 +80,8 @@
 		7B2181A827359CEC00FEF2D4 /* LessonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonModel.swift; sourceTree = "<group>"; };
 		7B360EF42763699200E4254C /* oppositeCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oppositeCLVCell.swift; sourceTree = "<group>"; };
 		7B360EF52763699200E4254C /* oppositeCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = oppositeCLVCell.xib; sourceTree = "<group>"; };
-		7B68E1AB2769F84C00FD8E8D /* testVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testVC.swift; sourceTree = "<group>"; };
+		7B6F494B277CBD4D005732E4 /* vocabCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vocabCLVCell.swift; sourceTree = "<group>"; };
+		7B6F494C277CBD4D005732E4 /* vocabCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = vocabCLVCell.xib; sourceTree = "<group>"; };
 		7B7367E227679B6900D7BD90 /* AlphabetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetModel.swift; sourceTree = "<group>"; };
 		7B7367E527679E4200D7BD90 /* OppositeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OppositeModel.swift; sourceTree = "<group>"; };
 		7B7367E72767A11000D7BD90 /* AlphabetDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetDetailVC.swift; sourceTree = "<group>"; };
@@ -89,6 +100,10 @@
 		7B7B336627327DDF005E8B75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B7B336827327DDF005E8B75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B7EBEF1273D086900B806A6 /* LanguageMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageMenuModel.swift; sourceTree = "<group>"; };
+		7B820543276B9A5E0048D785 /* WordIds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordIds.swift; sourceTree = "<group>"; };
+		7B820545276BAB720048D785 /* settingCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingCLVCell.swift; sourceTree = "<group>"; };
+		7B820546276BAB720048D785 /* settingCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = settingCLVCell.xib; sourceTree = "<group>"; };
+		7B820549276BBDB50048D785 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		7B861F1E275F6A900054E6C0 /* NumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberVC.swift; sourceTree = "<group>"; };
 		7B861F25275F7D800054E6C0 /* WordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModel.swift; sourceTree = "<group>"; };
 		7B861F29275F86220054E6C0 /* TopicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicModel.swift; sourceTree = "<group>"; };
@@ -108,7 +123,12 @@
 		7BBD678527329022002C6AB2 /* mainCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = mainCLVCell.xib; sourceTree = "<group>"; };
 		7BBD678827329173002C6AB2 /* ExtensionMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionMain.swift; sourceTree = "<group>"; };
 		7BD1BB89275E3AC60041C91F /* LessonDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDataModel.swift; sourceTree = "<group>"; };
+		7BE8CAB727706A6900AFA47B /* recordTBVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recordTBVCell.swift; sourceTree = "<group>"; };
+		7BE8CAB827706A6900AFA47B /* recordTBVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = recordTBVCell.xib; sourceTree = "<group>"; };
+		7BE8CABB27706F6300AFA47B /* AKAudioRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKAudioRecorder.swift; sourceTree = "<group>"; };
 		7BE8E2F5274C9A7500965D7F /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		7BFE9B21277DA6E8008D7ADA /* typeWordCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = typeWordCLVCell.swift; sourceTree = "<group>"; };
+		7BFE9B22277DA6E8008D7ADA /* typeWordCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = typeWordCLVCell.xib; sourceTree = "<group>"; };
 		7BFF2061274BEE450072A766 /* langCLVCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = langCLVCell2.swift; sourceTree = "<group>"; };
 		7BFF2062274BEE450072A766 /* langCLVCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = langCLVCell2.xib; sourceTree = "<group>"; };
 		CDB94203B5B14E1B8879ABC7 /* Pods-learn_hebrew.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learn_hebrew.release.xcconfig"; path = "Target Support Files/Pods-learn_hebrew/Pods-learn_hebrew.release.xcconfig"; sourceTree = "<group>"; };
@@ -247,6 +267,12 @@
 				7BA1531C275A0BA500C323A8 /* audioCLVCell.xib */,
 				7B360EF42763699200E4254C /* oppositeCLVCell.swift */,
 				7B360EF52763699200E4254C /* oppositeCLVCell.xib */,
+				7B820545276BAB720048D785 /* settingCLVCell.swift */,
+				7B820546276BAB720048D785 /* settingCLVCell.xib */,
+				7B6F494B277CBD4D005732E4 /* vocabCLVCell.swift */,
+				7B6F494C277CBD4D005732E4 /* vocabCLVCell.xib */,
+				7BFE9B21277DA6E8008D7ADA /* typeWordCLVCell.swift */,
+				7BFE9B22277DA6E8008D7ADA /* typeWordCLVCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -287,6 +313,8 @@
 				7B73A95427353A3800709D54 /* PhraseBook */,
 				7B73A95227353A2300709D54 /* SelectLanguageVC.swift */,
 				7B7B335E27327DDE005E8B75 /* MainViewController.swift */,
+				7B820549276BBDB50048D785 /* RecordViewController.swift */,
+				7BE8CABB27706F6300AFA47B /* AKAudioRecorder.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -296,6 +324,8 @@
 			children = (
 				7BBD678427329022002C6AB2 /* mainCLVCell.swift */,
 				7BBD678527329022002C6AB2 /* mainCLVCell.xib */,
+				7BE8CAB727706A6900AFA47B /* recordTBVCell.swift */,
+				7BE8CAB827706A6900AFA47B /* recordTBVCell.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -353,6 +383,7 @@
 			children = (
 				7B861F25275F7D800054E6C0 /* WordModel.swift */,
 				7B861F29275F86220054E6C0 /* TopicModel.swift */,
+				7B820543276B9A5E0048D785 /* WordIds.swift */,
 			);
 			path = Word;
 			sourceTree = "<group>";
@@ -371,7 +402,6 @@
 			children = (
 				7B73A95B27353C2F00709D54 /* AlphabetVC.swift */,
 				7B7367E72767A11000D7BD90 /* AlphabetDetailVC.swift */,
-				7B68E1AB2769F84C00FD8E8D /* testVC.swift */,
 			);
 			path = Alphabet;
 			sourceTree = "<group>";
@@ -456,7 +486,10 @@
 				7B7B336727327DDF005E8B75 /* LaunchScreen.storyboard in Resources */,
 				7B7B336427327DDF005E8B75 /* Assets.xcassets in Resources */,
 				7B21819D273583B700FEF2D4 /* phraseTBVCell.xib in Resources */,
+				7B820548276BAB720048D785 /* settingCLVCell.xib in Resources */,
+				7BE8CABA27706A6900AFA47B /* recordTBVCell.xib in Resources */,
 				7BBD678727329022002C6AB2 /* mainCLVCell.xib in Resources */,
+				7BFE9B24277DA6E8008D7ADA /* typeWordCLVCell.xib in Resources */,
 				7B7B336227327DDE005E8B75 /* Main.storyboard in Resources */,
 				7B2181A52735997100FEF2D4 /* db.db in Resources */,
 				7BA1531E275A0BA500C323A8 /* audioCLVCell.xib in Resources */,
@@ -464,6 +497,7 @@
 				7BFF2064274BEE450072A766 /* langCLVCell2.xib in Resources */,
 				7B9AD4D62761EA9C0084DD60 /* alphabetCLVCell.xib in Resources */,
 				7BA1083F27392D7400F504F6 /* langCLVCell.xib in Resources */,
+				7B6F494E277CBD4D005732E4 /* vocabCLVCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +553,8 @@
 				7B7367E327679B6900D7BD90 /* AlphabetModel.swift in Sources */,
 				7B7B335F27327DDE005E8B75 /* MainViewController.swift in Sources */,
 				7B861F2A275F86220054E6C0 /* TopicModel.swift in Sources */,
+				7B820547276BAB720048D785 /* settingCLVCell.swift in Sources */,
+				7BE8CABC27706F6300AFA47B /* AKAudioRecorder.swift in Sources */,
 				7B7B335B27327DDE005E8B75 /* AppDelegate.swift in Sources */,
 				7B73A9652735401D00709D54 /* OppositeVC.swift in Sources */,
 				7B21819F2735949400FEF2D4 /* LessonVC.swift in Sources */,
@@ -533,13 +569,17 @@
 				7BBD678927329173002C6AB2 /* ExtensionMain.swift in Sources */,
 				7B2181A2273594E000FEF2D4 /* lessonCLVCell.swift in Sources */,
 				7BFF2063274BEE450072A766 /* langCLVCell2.swift in Sources */,
+				7B6F494D277CBD4D005732E4 /* vocabCLVCell.swift in Sources */,
 				7BBB654127675E900081022B /* OppositeDetailVC.swift in Sources */,
 				7B73A95827353AE700709D54 /* DownloadAudioVC.swift in Sources */,
 				7B7EBEF2273D086900B806A6 /* LanguageMenuModel.swift in Sources */,
-				7B68E1AC2769F84C00FD8E8D /* testVC.swift in Sources */,
+				7BFE9B23277DA6E8008D7ADA /* typeWordCLVCell.swift in Sources */,
+				7B820544276B9A5E0048D785 /* WordIds.swift in Sources */,
 				7B21819C273583B700FEF2D4 /* phraseTBVCell.swift in Sources */,
 				7BD1BB8A275E3AC60041C91F /* LessonDataModel.swift in Sources */,
+				7BE8CAB927706A6900AFA47B /* recordTBVCell.swift in Sources */,
 				7BBD678627329022002C6AB2 /* mainCLVCell.swift in Sources */,
+				7B82054A276BBDB50048D785 /* RecordViewController.swift in Sources */,
 				7BE8E2F6274C9A7500965D7F /* SettingVC.swift in Sources */,
 				7B8D56BD275BC14D006EFD8D /* HelpViewController.swift in Sources */,
 				7B73A95327353A2300709D54 /* SelectLanguageVC.swift in Sources */,

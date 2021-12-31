@@ -130,10 +130,6 @@ extension LessonVC: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: lessonCLVCell.className, for: indexPath) as! lessonCLVCell
         cell.lessonView.layer.cornerRadius = 16
         cell.lessonView.layer.masksToBounds = true
-//        cell.lessonView.layer.shadowRadius = 10
-//        cell.lessonView.layer.shadowOpacity = 1
-//        cell.lessonView.layer.shadowOffset = CGSize(width: 10, height: 3)
-//        cell.lessonView.layer.shadowColor = UIColor.black.cgColor
         cell.lessonImage.image = image
         if self.listLessonData[indexPath.row].languageId == self.listLanguage[indexPath.row].languageId  {
             let fullNameArr:[String] = self.listLessonData[indexPath.row*60 + index + lesson*600].lessonName.components(separatedBy: "@")

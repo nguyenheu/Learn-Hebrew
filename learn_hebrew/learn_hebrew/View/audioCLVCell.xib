@@ -51,32 +51,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIk-Z9-vWG">
-                                <rect key="frame" x="311" y="39.5" width="24" height="24"/>
+                                <rect key="frame" x="301" y="49.5" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="zQW-RL-BNh"/>
+                                    <constraint firstAttribute="height" constant="30" id="89k-Jy-MxD"/>
+                                    <constraint firstAttribute="width" constant="30" id="C5k-VA-mRk"/>
                                 </constraints>
                                 <state key="normal" image="pause_purple"/>
                                 <connections>
                                     <action selector="audioButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="J6T-fT-We7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1a-5x-BuU">
-                                <rect key="frame" x="311" y="74" width="24" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="HMi-M2-xVV"/>
-                                </constraints>
-                                <state key="normal" image="Plus"/>
-                                <connections>
-                                    <action selector="addAudioButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="VYJ-AX-iZE"/>
-                                    <action selector="audioButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Bb1-g3-85V"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="j1a-5x-BuU" secondAttribute="trailing" constant="5" id="A02-Fr-5hA"/>
+                            <constraint firstAttribute="trailing" secondItem="zIk-Z9-vWG" secondAttribute="trailing" constant="9" id="3AJ-aN-y2g"/>
                             <constraint firstAttribute="bottom" secondItem="Ccz-5B-7GY" secondAttribute="bottom" id="B9L-ow-TLo"/>
                             <constraint firstItem="tTv-eS-4WJ" firstAttribute="leading" secondItem="af9-W7-ueL" secondAttribute="leading" constant="5" id="BxA-kT-nNv"/>
+                            <constraint firstItem="zIk-Z9-vWG" firstAttribute="centerY" secondItem="af9-W7-ueL" secondAttribute="centerY" id="GQ1-YW-TVN"/>
                             <constraint firstItem="cMi-le-Ox2" firstAttribute="top" secondItem="tTv-eS-4WJ" secondAttribute="bottom" constant="5" id="Gp2-Bd-tvl"/>
                             <constraint firstAttribute="trailing" secondItem="jbr-6e-bg7" secondAttribute="trailing" constant="50" id="Hb0-F4-d6z"/>
                             <constraint firstItem="jbr-6e-bg7" firstAttribute="top" secondItem="cMi-le-Ox2" secondAttribute="bottom" constant="1" id="K3r-eL-e5o"/>
@@ -84,14 +75,11 @@
                             <constraint firstItem="Ccz-5B-7GY" firstAttribute="leading" secondItem="af9-W7-ueL" secondAttribute="leading" constant="5" id="NTc-I1-rBB"/>
                             <constraint firstItem="jbr-6e-bg7" firstAttribute="leading" secondItem="Ccz-5B-7GY" secondAttribute="leading" id="OwD-YX-l1Q"/>
                             <constraint firstAttribute="trailing" secondItem="cMi-le-Ox2" secondAttribute="trailing" constant="50" id="X4n-Q3-Kge"/>
-                            <constraint firstItem="j1a-5x-BuU" firstAttribute="top" secondItem="zIk-Z9-vWG" secondAttribute="bottom" constant="10.5" id="ZTM-m4-w6w"/>
                             <constraint firstItem="jbr-6e-bg7" firstAttribute="leading" secondItem="af9-W7-ueL" secondAttribute="leading" constant="5" id="auW-qg-neq"/>
                             <constraint firstItem="jbr-6e-bg7" firstAttribute="leading" secondItem="cMi-le-Ox2" secondAttribute="leading" id="ca2-NP-3Rs"/>
-                            <constraint firstItem="zIk-Z9-vWG" firstAttribute="centerY" secondItem="af9-W7-ueL" secondAttribute="centerY" multiplier="0.8" id="oDw-4z-RQV"/>
                             <constraint firstAttribute="trailing" secondItem="Ccz-5B-7GY" secondAttribute="trailing" constant="5" id="oJ4-0R-5hU"/>
                             <constraint firstItem="tTv-eS-4WJ" firstAttribute="top" secondItem="af9-W7-ueL" secondAttribute="top" constant="5" id="rt8-4j-XAD"/>
                             <constraint firstItem="Ccz-5B-7GY" firstAttribute="top" secondItem="jbr-6e-bg7" secondAttribute="bottom" constant="5" id="u69-cP-0u7"/>
-                            <constraint firstAttribute="trailing" secondItem="zIk-Z9-vWG" secondAttribute="trailing" constant="5" id="wtB-eU-WXs"/>
                             <constraint firstItem="cMi-le-Ox2" firstAttribute="leading" secondItem="af9-W7-ueL" secondAttribute="leading" constant="5" id="ywy-kh-434"/>
                         </constraints>
                     </view>
@@ -102,23 +90,9 @@
                             <constraint firstAttribute="width" constant="24" id="Ce4-0H-PrY"/>
                         </constraints>
                         <state key="normal" image="voice_purple"/>
-                        <connections>
-                            <action selector="recordButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="1zu-HU-7rP"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAN-ac-phr">
-                        <rect key="frame" x="252" y="149" width="24" height="24"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="24" id="RKW-zZ-zhs"/>
-                            <constraint firstAttribute="height" constant="24" id="VDh-0c-lEe"/>
-                        </constraints>
-                        <state key="normal" image="Plus"/>
-                        <connections>
-                            <action selector="moreLanguageButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="YYK-yW-lke"/>
-                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxP-Xi-ARJ">
-                        <rect key="frame" x="208" y="149" width="24" height="24"/>
+                        <rect key="frame" x="252" y="149" width="24" height="24"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="24" id="CRp-fv-bTe"/>
                             <constraint firstAttribute="width" constant="24" id="kaR-qk-Rcc"/>
@@ -126,7 +100,6 @@
                         <state key="normal" image="audio_purple"/>
                         <connections>
                             <action selector="audio2Button:" destination="gTV-IL-0wX" eventType="touchUpInside" id="n6x-QA-avV"/>
-                            <action selector="audioButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="YDi-ae-jso"/>
                         </connections>
                     </button>
                 </subviews>
@@ -134,32 +107,29 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="kAN-ac-phr" firstAttribute="leading" secondItem="cxP-Xi-ARJ" secondAttribute="trailing" constant="20" id="54A-GY-p5V"/>
                 <constraint firstAttribute="trailing" secondItem="af9-W7-ueL" secondAttribute="trailing" id="Cgv-7L-O20"/>
-                <constraint firstItem="kAN-ac-phr" firstAttribute="top" secondItem="af9-W7-ueL" secondAttribute="bottom" constant="20" id="Eyv-Co-4IC"/>
                 <constraint firstItem="af9-W7-ueL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Myc-7P-jrZ"/>
                 <constraint firstItem="af9-W7-ueL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="QXJ-dT-h7C"/>
                 <constraint firstItem="hoz-Rk-EEt" firstAttribute="top" secondItem="af9-W7-ueL" secondAttribute="bottom" constant="20" id="V5a-4Y-7zE"/>
                 <constraint firstAttribute="trailing" secondItem="hoz-Rk-EEt" secondAttribute="trailing" constant="20" id="asX-sa-Adn"/>
                 <constraint firstItem="cxP-Xi-ARJ" firstAttribute="top" secondItem="af9-W7-ueL" secondAttribute="bottom" constant="20" id="cyG-wY-TB2"/>
-                <constraint firstItem="hoz-Rk-EEt" firstAttribute="leading" secondItem="kAN-ac-phr" secondAttribute="trailing" constant="20" id="fBc-o2-56W"/>
+                <constraint firstItem="hoz-Rk-EEt" firstAttribute="leading" secondItem="cxP-Xi-ARJ" secondAttribute="trailing" constant="20" id="tPC-G9-wMC"/>
             </constraints>
             <size key="customSize" width="340" height="197"/>
             <connections>
-                <outlet property="addButton" destination="j1a-5x-BuU" id="HfF-0p-Ajg"/>
                 <outlet property="heLanguageLabel" destination="tTv-eS-4WJ" id="jRy-pB-QI5"/>
                 <outlet property="languageLabel" destination="jbr-6e-bg7" id="pzc-4K-kBm"/>
                 <outlet property="pauseButton" destination="zIk-Z9-vWG" id="aoj-EM-zxN"/>
                 <outlet property="translateLanguageLabel" destination="cMi-le-Ox2" id="3aK-Kg-bHt"/>
+                <outlet property="voiceButton" destination="hoz-Rk-EEt" id="gzB-IF-es8"/>
             </connections>
             <point key="canvasLocation" x="339.13043478260875" y="138.95089285714286"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Plus" width="24" height="24"/>
-        <image name="audio_purple" width="24" height="24"/>
+        <image name="audio_purple" width="48" height="48"/>
         <image name="line" width="328" height="2"/>
-        <image name="pause_purple" width="24" height="24"/>
+        <image name="pause_purple" width="40" height="40"/>
         <image name="voice_purple" width="18" height="22"/>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

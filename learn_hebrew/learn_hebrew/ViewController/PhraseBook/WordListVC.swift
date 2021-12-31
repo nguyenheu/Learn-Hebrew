@@ -85,7 +85,6 @@ extension WordListVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: audioCLVCell.className, for: indexPath) as! audioCLVCell
         cell.pauseButton.isHidden = true
-        cell.addButton.isHidden = true
         let fullNameArr:[String] = self.listData[indexPath.row].value.components(separatedBy: "@")
 
         cell.languageLabel.text = fullNameArr[0]
@@ -93,8 +92,15 @@ extension WordListVC: UICollectionViewDelegate, UICollectionViewDataSource {
         let fullNameArr2:[String] = self.listDataHE[indexPath.row].value.components(separatedBy: "@")
         cell.heLanguageLabel.text = fullNameArr2[0]
         cell.translateLanguageLabel.text = fullNameArr2[1]
+        cell.voiceButton.addTarget(self, action: #selector(recordPresent) , for: .touchDown)
         
         return cell
+    }
+    @objc func recordPresent() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "RecordViewController") as! RecordViewController
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated:true)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -127,7 +133,7 @@ extension WordListVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.row == indexSelected {
             if UIDevice.current.userInterfaceIdiom == .pad{
-                return CGSize(width: UIScreen.main.bounds.width - 100, height: 80)
+                return CGSize(width: UIScreen.main.bounds.width - 100, height: 189)
             }
             return CGSize(width: (UIScreen.main.bounds.width) - 40, height: 189)
         }

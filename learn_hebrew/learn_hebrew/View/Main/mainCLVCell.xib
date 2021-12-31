@@ -17,13 +17,13 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jcj-HA-8i4">
-                        <rect key="frame" x="0.0" y="0.0" width="287" height="263"/>
+                        <rect key="frame" x="0.0" y="0.0" width="285" height="261"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QGE-u5-d1A">
-                                <rect key="frame" x="85" y="10" width="117" height="112"/>
+                                <rect key="frame" x="84.5" y="10" width="116" height="111"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbF-l2-M93">
-                                <rect key="frame" x="122.5" y="137" width="42" height="114"/>
+                                <rect key="frame" x="121.5" y="136" width="42" height="113"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,10 +44,10 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Jcj-HA-8i4" secondAttribute="bottom" id="0qr-WP-K4z"/>
+                <constraint firstAttribute="bottom" secondItem="Jcj-HA-8i4" secondAttribute="bottom" constant="2" id="0qr-WP-K4z"/>
                 <constraint firstItem="Jcj-HA-8i4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9BM-F2-ZNc"/>
                 <constraint firstItem="Jcj-HA-8i4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="U0V-xq-whc"/>
-                <constraint firstAttribute="trailing" secondItem="Jcj-HA-8i4" secondAttribute="trailing" id="yi7-dO-oqb"/>
+                <constraint firstAttribute="trailing" secondItem="Jcj-HA-8i4" secondAttribute="trailing" constant="2" id="yi7-dO-oqb"/>
             </constraints>
             <size key="customSize" width="36" height="198"/>
             <connections>

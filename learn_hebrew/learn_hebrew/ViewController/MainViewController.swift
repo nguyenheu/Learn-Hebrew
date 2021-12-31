@@ -42,15 +42,14 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: mainCLVCell.className, for: indexPath) as! mainCLVCell
         cell.myView.layer.cornerRadius = 16
-        cell.myView.layer.masksToBounds = true
         
 //        cell.myView.layer.borderWidth = 1.0
 //        cell.myView.layer.borderColor = UIColor.black.cgColor
         
+        cell.myView.layer.shadowOpacity = 0.1
+        cell.myView.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        cell.myView.layer.shadowRadius = 0.0
         cell.myView.layer.shadowColor = UIColor.black.cgColor
-        cell.myView.layer.shadowOffset = CGSize(width: 10, height: 3)
-        cell.myView.layer.shadowOpacity = 0.7
-        cell.myView.layer.shadowRadius = 4.0
         
         if indexPath.row == 0 {
             cell.myImage.image = UIImage(named: "remove_ads.png")
@@ -101,7 +100,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             self.present(vc, animated:true)
         } else if indexPath.row == 3 {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "DownloađAuioVC") as! DownloađAuioVC
+            let vc = storyboard.instantiateViewController(withIdentifier: "DownloadAuioVC") as! DownloadAuioVC
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated:true)
         } else if indexPath.row == 4 {

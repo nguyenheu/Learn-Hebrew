@@ -7,30 +7,33 @@
 
 import UIKit
 
-class DownloađAuioVC: UIViewController {
+class DownloadAuioVC: UIViewController {
 
     var listLessonDataFile:[LessonFileModel] = [LessonFileModel]()
-    @IBOutlet weak var audioCLV: UICollectionView!
     
+    @IBOutlet weak var downloadCLV: UICollectionView!
     @IBAction func backButton() {
         dismiss(animated: true, completion: nil)
     }
-    
-    @IBAction func downloadAudioButton(_ sender: UIButton) {
-        
+    @IBAction func downloadAudioButton(_ sender: Any) {
+        if downloadCLV.isHidden == true {
+            downloadCLV.isHidden = false
+        } else {
+            downloadCLV.isHidden = true
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        audioCLV.backgroundColor = UIColor.clear
-        audioCLV.register(UINib(nibName: langCLVCell2.className, bundle: nil), forCellWithReuseIdentifier: langCLVCell2.className)
+        downloadCLV.backgroundColor = UIColor.clear
+        downloadCLV.register(UINib(nibName: langCLVCell2.className, bundle: nil), forCellWithReuseIdentifier: langCLVCell2.className)
         
         LessonFileService.shared.getDataLessonFile(){ listLessonDataFile, error in
             if let listLessonDataFile = listLessonDataFile{
                 self.listLessonDataFile = listLessonDataFile
             }
         }
-        
+        downloadCLV.isHidden = true
         var cellWidth = 0
         if UIDevice.current.userInterfaceIdiom == .pad {
             cellWidth = Int(UIScreen.main.bounds.width) / 5 - 10
@@ -42,11 +45,25 @@ class DownloađAuioVC: UIViewController {
         flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         flowLayout.scrollDirection = UICollectionView.ScrollDirection.vertical
         flowLayout.minimumInteritemSpacing = 0.0
-        audioCLV.collectionViewLayout = flowLayout
+        downloadCLV.collectionViewLayout = flowLayout
     }
+//    func extractZipFile() {
+//        let fileManager = FileManager()
+//        let currentWorkingPath = fileManager.currentDirectoryPath
+//        var sourceURL = URL(fileURLWithPath: currentWorkingPath)
+//        sourceURL.appendPathComponent("archive.zip")
+//        var destinationURL = URL(fileURLWithPath: currentWorkingPath)
+//        destinationURL.appendPathComponent("directory")
+//        do {
+//            try fileManager.createDirectory(at: destinationURL, withIntermediateDirectories: true, attributes: nil)
+//            try fileManager.unzip
+//        } catch {
+//            print("Extraction of ZIP archive failed with error:\(error)")
+//        }
+//    }
 }
 
-extension DownloađAuioVC: UICollectionViewDelegate, UICollectionViewDataSource {
+extension DownloadAuioVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -75,7 +92,7 @@ extension DownloađAuioVC: UICollectionViewDelegate, UICollectionViewDataSource 
     
 }
 
-extension DownloađAuioVC: UICollectionViewDelegateFlowLayout {
+extension DownloadAuioVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .zero
     }
@@ -90,7 +107,7 @@ extension DownloađAuioVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if UIDevice.current.userInterfaceIdiom == .pad{
-            return CGSize(width: UIScreen.main.bounds.width - 20, height: 100)
+            return CGSize(width: UIScreen.main.bounds.width - 20, height: 60)
         }
         return CGSize(width: UIScreen.main.bounds.width - 15, height: 60)
     }

@@ -11,13 +11,17 @@ class VocabDetailVC: UIViewController {
     var index = 14
     var indexHE = 21
     var topicId = 0
-    var topicIdHebrew = 0
-    var lesson = 0
-//    var mainString = ""
+    var topicIdHE = 0
+    var wordString = ""
+    var word : String = ""
+    var wordHE : String = ""
     var listDataWord:[WordModel] = [WordModel]()
-    var listDataTopic:[TopicModel] = [TopicModel]()
-    var listWord:[WordModel] = [WordModel]()
-    var listWordHE:[WordModel] = [WordModel]()
+    var listTopicId:[WordModel] = [WordModel]()
+    var listTopicIdHE:[WordModel] = [WordModel]()
+    var listTopicIdFilter:[WordModel] = [WordModel]()
+    
+    var allTopic: [[WordModel]] = [[]]
+    
     @IBOutlet weak var vocabDetailCLV: UICollectionView!
     @IBOutlet weak var mainDetailLabel: UILabel!
     @IBAction func backButton() {
@@ -27,21 +31,15 @@ class VocabDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         vocabDetailCLV.backgroundColor = UIColor.clear
-        vocabDetailCLV.register(UINib(nibName: audioCLVCell.className, bundle: nil), forCellWithReuseIdentifier: audioCLVCell.className)
+        vocabDetailCLV.register(UINib(nibName: vocabCLVCell.className, bundle: nil), forCellWithReuseIdentifier: vocabCLVCell.className)
+        mainDetailLabel.text = wordString
 
         WordService.shared.getDataWord(){ listDataWord, error in
             if let listDataWord = listDataWord{
                 self.listDataWord = listDataWord
-                self.getListWord()
-                self.getListWordHE()
+                self.getTopicId()
+                self.getTopicIdHE()
                 self.vocabDetailCLV.reloadData()
-            }
-        }
-        
-        TopicService.shared.getDataTopic(){ listDataTopic, error in
-            if let listDataTopic = listDataTopic{
-                self.listDataTopic = listDataTopic
-                
             }
         }
         
@@ -58,17 +56,29 @@ class VocabDetailVC: UIViewController {
         flowLayout.minimumInteritemSpacing = 0.0
         vocabDetailCLV.collectionViewLayout = flowLayout
     }
-    func getListWord() {
-        for item in listDataWord {
-            if item.word_id == topicId {
-                listWord.append(item)
+    func getTopicId() {
+        for i in listDataWord{
+            listTopicIdFilter.removeAll()
+            if i.topic_id == topicId{
+                listTopicIdFilter.append(i)
+                for j in listTopicIdFilter {
+                    if j.lan_code == word {
+                        listTopicId.append(j)
+                    }
+                }
             }
         }
     }
-    func getListWordHE() {
-        for item in listDataWord {
-            if item.word_id == topicId {
-                listWordHE.append(item)
+    func getTopicIdHE() {
+        for i in listDataWord{
+            listTopicIdFilter.removeAll()
+            if i.topic_id == topicId{
+                listTopicIdFilter.append(i)
+                for j in listTopicIdFilter {
+                    if j.lan_code == wordHE {
+                        listTopicIdHE.append(j)
+                    }
+                }
             }
         }
     }
@@ -80,26 +90,31 @@ extension VocabDetailVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listWord.count
+        return listTopicId.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: audioCLVCell.className, for: indexPath) as! audioCLVCell
-        let fullNameArr:[String] = self.listDataWord[indexPath.row + indexHE + lesson*topicId].word.components(separatedBy: "@")
-
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: vocabCLVCell.className, for: indexPath) as! vocabCLVCell
+        cell.vocabSubView.layer.cornerRadius = 16
+        cell.vocabSubView.layer.shadowOpacity = 0.1
+        cell.vocabSubView.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        cell.vocabSubView.layer.shadowRadius = 0.0
+        cell.vocabSubView.layer.shadowColor = UIColor.black.cgColor
+        
+        let fullNameArr:[String] = self.listTopicIdHE[indexPath.row].word.components(separatedBy: "@")
         cell.heLanguageLabel.text = fullNameArr[0]
         cell.translateLanguageLabel.text = fullNameArr[1]
-
-//        if index == 54{
-//            let fullNameArr2:[String] = self.listDataWord[indexPath.row + 14*topicId + lesson*1904].word.components(separatedBy: "@")
-//            cell.languageLabel.text = fullNameArr2[0]
-//        } else if index < 54 {
-//            let fullNameArr3:[String] = self.listDataWord[indexPath.row + index*topicId + lesson*1904].word.components(separatedBy: "@")
-//            cell.languageLabel.text = fullNameArr3[0]
-//        } else if index > 54 {
-//            let fullNameArr3:[String] = self.listDataWord[indexPath.row + (index-1)*topicId + lesson*1904].word.components(separatedBy: "@")
-//            cell.languageLabel.text = fullNameArr3[0]
-//        }
+        
+        if index == 54 {
+            let fullNameArr2:[String] = self.listTopicId[indexPath.row].word.components(separatedBy: "@")
+            cell.otherLanguageLabel.text = fullNameArr2[0]
+        } else if index < 54 {
+            let fullNameArr3:[String] = self.listTopicId[indexPath.row].word.components(separatedBy: "@")
+            cell.otherLanguageLabel.text = fullNameArr3[0]
+        } else if index > 54 {
+            let fullNameArr3:[String] = self.listTopicId[indexPath.row].word.components(separatedBy: "@")
+            cell.otherLanguageLabel.text = fullNameArr3[0]
+        }
         
         return cell
     }
@@ -123,7 +138,7 @@ extension VocabDetailVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 15
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -132,8 +147,8 @@ extension VocabDetailVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if UIDevice.current.userInterfaceIdiom == .pad{
-            return CGSize(width: UIScreen.main.bounds.width - 60, height: 129)
+            return CGSize(width: UIScreen.main.bounds.width - 60, height: 120)
         }
-        return CGSize(width: UIScreen.main.bounds.width - 40, height: 129)
+        return CGSize(width: UIScreen.main.bounds.width - 40, height: 120)
     }
 }

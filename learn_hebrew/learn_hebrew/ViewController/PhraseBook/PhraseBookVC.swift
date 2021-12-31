@@ -33,7 +33,7 @@ extension PhraseBookVC: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"phraseTBVCell", for: indexPath) as! phraseTBVCell
-        cell.myImage.image = UIImage(named: "star_orange")
+        cell.myImage.image = UIImage(named: "right")
         if indexPath.row == 0 {
             cell.myLabel.text = "001-010"
         } else if indexPath.row == 1 {

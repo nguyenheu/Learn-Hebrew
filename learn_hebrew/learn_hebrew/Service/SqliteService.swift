@@ -193,7 +193,7 @@ class WordService:NSObject {
     var DatabaseRoot:Connection?
     var listDataWord:[WordModel] = [WordModel]()
     let users4 = Table("tblWords")
-    let word_id = Expression<Int>("word_id")
+    let topic_id = Expression<Int>("topic_id")
     let lan_code = Expression<String>("lan_code")
     let word = Expression<String>("word")
     
@@ -227,7 +227,7 @@ class WordService:NSObject {
         if let DatabaseRoot = DatabaseRoot{
             do{
                 for user in try DatabaseRoot.prepare(users4) {
-                    listDataWord.append(WordModel(word_id: Int(user[word_id]),
+                    listDataWord.append(WordModel(topic_id: Int(user[topic_id]),
                                                   lan_code: user[lan_code],
                                                   word: user[word]))
                 }
